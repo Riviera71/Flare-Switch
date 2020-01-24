@@ -1,0 +1,2089 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>FLARE Documentation - Attribute Reference</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body {
+	font-family: Arial, sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+.logo {
+	text-align: center;
+	background: #000;
+	color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+<img src="../mods/default/images/menus/logo.png" alt="FLARE"/>
+<h1>Attribute Reference</h1>
+<hr/>
+</div>
+
+<div class="content">
+
+<h3>Attribute description</h3>
+
+<p>Attribute descriptions are in the following format: section.attributename, <code>valuetype</code>, short attribute description</p>
+
+<h4>Valuetype syntax</h4>
+
+<p><code>[val1, ...]</code>, Multiple values between a set of square brackets denotes possible types/values for a single field.</p>
+
+<p><code>"..."</code>, Anything between double quotes is a string literal. This is mostly used in conjunction with the above square brackets syntax.</p>
+
+<p><code>list(...)</code>, Lists are a series of values that can repeat on a single line, separated by commas/semicolons. Example of list(int, bool): &ldquo;1,false;2,true&rdquo;</p>
+
+<p><code>repeatable(...)</code>, Repeatable keys can be used for multiple lines. An example of this would be an item with multiple &ldquo;bonus&rdquo; lines.</p>
+
+<h4>List of available valuetypes</h4>
+
+<p><code>bool</code>, a string value of <code>true</code> or <code>false</code></p>
+
+<p><code>int</code>, a signed integer value</p>
+
+<p><code>string</code>, a text string value</p>
+
+<p><code>float</code>, a floating point number</p>
+
+<p><code>item_id</code>, specifies an integer item identifer (greater than 0)</p>
+
+<p><code>power_id</code>, specifies an integer power identifer (greater than 0)</p>
+
+<p><code>icon_id</code>, specifies an integer icon identifer (greater than or equal to 0)</p>
+
+<p><code>point</code>, defined as: <code>int, int : X, Y</code></p>
+
+<p><code>rectangle</code>, defined as: <code>int, int, int, int : X, Y, Width, Height</code></p>
+
+<p><code>filename</code>, a string path to a file relative to the base of the mod directory (e.g. &ldquo;animations/hero.txt&rdquo;)</p>
+
+<p><code>color</code>, defined as: <code>int, int, int : Red, Green, Blue</code></p>
+
+<p><code>predefined_string</code>, same as a string, but uses a value defined elsewhere</p>
+
+<p><code>alignment</code>, defined as: <code>["topleft", "top", "topright", "left", "center", "right", "bottomleft", "bottom", "bottomright"]</code></p>
+
+<p><code>direction</code>, defined as: <code>["N", "NE", "E", "SE", "S", "SW", "W", "NW", int]</code>. If defined as an integer, the value must be between 0-7 inclusive.</p>
+
+<p><code>duration</code>, durations can be specified in seconds and milliseconds with integer suffix s, ms (eg. 20s, 20000ms)</p>
+
+<p><code>label</code>, defined as: <code>"hidden"</code> <strong>or</strong> <code>int, int, ["left", "right", "center"], ["top", "center", "bottom"], string : X, Y, Justify, Vertical Align, Font style</code>. The font style can be any style defined in engine/font_settings.txt.</p>
+
+<p><code>loot</code>, defined as: <code>filename</code> <strong>or</strong> <code>["currency", item_id], ["fixed", float], int, int : Item, Drop chance, Min quantity, Max quantity</code>. There is a limitation when defining as part of a list(&hellip;): filenames can only be used in the first list element.</p>
+
+<p><code>version</code>, defined as: a string of three numbers, separated by dots (e.g. &ldquo;1.2.03&rdquo;)</p>
+
+<p><code>raw</code>, This is plain text, including line breaks. It is used only for map layer data.</p>
+<hr />
+
+<h4>AnimationSet</h4>
+
+<p>Description of animations in animations/</p>
+
+<p><strong>image</strong> | <code>filename</code> | Filename of sprite-sheet image.</p>
+
+<p><strong>render_size</strong> | <code>int, int : Width, Height</code> | Width and height of animation.</p>
+
+<p><strong>render_offset</strong> | <code>int, int : X offset, Y offset</code> | Render x/y offset.</p>
+
+<p><strong>blend_mode</strong> | <code>["normal", "add"]</code> | The type of blending used when rendering this animation.</p>
+
+<p><strong>alpha_mod</strong> | <code>int</code> | Changes the default alpha of this animation. 255 is fully opaque.</p>
+
+<p><strong>color_mod</strong> | <code>color</code> | Changes the default color mod of this animation. &ldquo;255,255,255&rdquo; is no color mod.</p>
+
+<p><strong>animation.position</strong> | <code>int</code> | Number of frames to the right to use as the first frame. Unpacked animations only.</p>
+
+<p><strong>animation.frames</strong> | <code>int</code> | The total number of frames</p>
+
+<p><strong>animation.duration</strong> | <code>duration</code> | The duration of the entire animation in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>animation.type</strong> | <code>["play_once", "back_forth", "looped"]</code> | How to loop (or not loop) this animation.</p>
+
+<p><strong>animation.active_frame</strong> | <code>[list(int), "all"]</code> | A list of frames marked as &ldquo;active&rdquo;. Also, &ldquo;all&rdquo; can be used to mark all frames as active.</p>
+
+<p><strong>animation.frame</strong> | <code>int, int, int, int, int, int, int, int : Index, Direction, X, Y, Width, Height, X offset, Y offset</code> | A single frame of a compressed animation.</p>
+
+<hr />
+
+<h4>Avatar: Step sounds</h4>
+
+<p>Description of items/step_sounds.txt</p>
+
+<p><strong>id</strong> | <code>string</code> | An identifier name for a set of step sounds.</p>
+
+<p><strong>step</strong> | <code>filename</code> | Filename of a step sound effect.</p>
+
+<hr />
+
+<h4>Avatar: Hero layers</h4>
+
+<p>Description of engine/hero_layers.txt</p>
+
+<p><strong>layer</strong> | <code>direction, list(string) : Direction, Layer name(s)</code> | Defines the hero avatar sprite layer</p>
+
+<hr />
+
+<h4>CombatText</h4>
+
+<p>Description of engine/combat_text.txt</p>
+
+<p><strong>duration</strong> | <code>duration</code> | Duration of the combat text in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>speed</strong> | <code>int</code> | Motion speed of the combat text.</p>
+
+<p><strong>offset</strong> | <code>int</code> | The vertical offset for the combat text&rsquo;s starting position.</p>
+
+<hr />
+
+<h4>CursorManager</h4>
+
+<p>Description of engine/mouse_cursor.txt</p>
+
+<p><strong>normal</strong> | <code>filename</code> | Filename of an image for the normal cursor.</p>
+
+<p><strong>interact</strong> | <code>filename</code> | Filename of an image for the object interaction cursor.</p>
+
+<p><strong>talk</strong> | <code>filename</code> | Filename of an image for the NPC interaction cursor.</p>
+
+<p><strong>attack</strong> | <code>filename</code> | Filename of an image for the cursor when attacking enemies.</p>
+
+<p><strong>lowhp_normal</strong> | <code>filename</code> | Filename of an image for the normal cursor when health is low.</p>
+
+<p><strong>lowhp_interact</strong> | <code>filename</code> | Filename of an image for the object interaction cursor when health is low.</p>
+
+<p><strong>lowhp_talk</strong> | <code>filename</code> | Filename of an image for the NPC interaction cursor when health is low.</p>
+
+<p><strong>lowhp_attack</strong> | <code>filename</code> | Filename of an image for the cursor when attacking enemies and health is low.</p>
+
+<hr />
+
+<h4>EnemyGroupManager</h4>
+
+<p>Description of enemies in enemies/</p>
+
+<p><strong>level</strong> | <code>int</code> | Level of the enemy</p>
+
+<p><strong>rarity</strong> | <code>["common", "uncommon", "rare"]</code> | Enemy rarity</p>
+
+<p><strong>categories</strong> | <code>list(predefined_string)</code> | Comma separated list of enemy categories</p>
+
+<hr />
+
+<h4>EngineSettings: Misc</h4>
+
+<p>Description of engine/misc.txt</p>
+
+<p><strong>save_hpmp</strong> | <code>bool</code> | When saving the game, keep the hero&rsquo;s current HP and MP.</p>
+
+<p><strong>corpse_timeout</strong> | <code>duration</code> | Duration that a corpse can exist on the map in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>sell_without_vendor</strong> | <code>bool</code> | Allows selling items when not at a vendor via CTRL-Click.</p>
+
+<p><strong>aim_assist</strong> | <code>int</code> | The pixel offset for powers that use aim_assist.</p>
+
+<p><strong>window_title</strong> | <code>string</code> | Sets the text in the window&rsquo;s titlebar.</p>
+
+<p><strong>save_prefix</strong> | <code>string</code> | A string that&rsquo;s prepended to save filenames to prevent conflicts between mods.</p>
+
+<p><strong>sound_falloff</strong> | <code>int</code> | The maximum radius in tiles that any single sound is audible.</p>
+
+<p><strong>party_exp_percentage</strong> | <code>int</code> | The percentage of XP given to allies.</p>
+
+<p><strong>enable_ally_collision</strong> | <code>bool</code> | Allows allies to block the player&rsquo;s path.</p>
+
+<p><strong>enable_ally_collision_ai</strong> | <code>bool</code> | Allows allies to block the path of other AI creatures.</p>
+
+<p><strong>currency_id</strong> | <code>item_id</code> | An item id that will be used as currency.</p>
+
+<p><strong>interact_range</strong> | <code>float</code> | Distance where the player can interact with objects and NPCs.</p>
+
+<p><strong>menus_pause</strong> | <code>bool</code> | Opening any menu will pause the game.</p>
+
+<p><strong>save_onload</strong> | <code>bool</code> | Save the game upon changing maps.</p>
+
+<p><strong>save_onexit</strong> | <code>bool</code> | Save the game upon quitting to the title screen or desktop.</p>
+
+<p><strong>save_pos_onexit</strong> | <code>bool</code> | If the game gets saved on exiting, store the player&rsquo;s current position instead of the map spawn position.</p>
+
+<p><strong>camera_speed</strong> | <code>float</code> | Modifies how fast the camera moves to recenter on the player. Larger values mean a slower camera. Default value is 10.</p>
+
+<p><strong>save_buyback</strong> | <code>bool</code> | Saves the vendor buyback stock whenever the game is saved.</p>
+
+<p><strong>keep_buyback_on_map_change</strong> | <code>bool</code> | If true, NPC buyback stocks will persist when the map changes. If false, save_buyback is disabled.</p>
+
+<p><strong>sfx_unable_to_cast</strong> | <code>filename</code> | Sound to play when the player lacks the MP to cast a power.</p>
+
+<hr />
+
+<h4>EngineSettings: Resolution</h4>
+
+<p>Description of engine/resolutions.txt</p>
+
+<p><strong>menu_frame_width</strong> | <code>int</code> | Width of frame for New Game, Configuration, etc. menus.</p>
+
+<p><strong>menu_frame_height</strong> | <code>int</code> | Height of frame for New Game, Configuration, etc. menus.</p>
+
+<p><strong>icon_size</strong> | <code>int</code> | Size of icons.</p>
+
+<p><strong>required_width</strong> | <code>int</code> | Minimum window/screen resolution width.</p>
+
+<p><strong>required_height</strong> | <code>int</code> | Minimum window/screen resolution height.</p>
+
+<p><strong>virtual_height</strong> | <code>list(int)</code> | A list of heights (in pixels) that the game can use for its actual rendering area. The virtual height chosen is based on the current window height. The width will be resized to match the window&rsquo;s aspect ratio, and everything will be scaled up to fill the window.</p>
+
+<p><strong>virtual_dpi</strong> | <code>float</code> | A target diagonal screen DPI used to determine how much to scale the internal render resolution.</p>
+
+<p><strong>ignore_texture_filter</strong> | <code>bool</code> | If true, this ignores the &ldquo;Texture Filtering&rdquo; video setting and uses only nearest-neighbor scaling. This is good for games that use pixel art assets.</p>
+
+<hr />
+
+<h4>EngineSettings: Gameplay</h4>
+
+<p>Description of engine/gameplay.txt</p>
+
+<p><strong>enable_playgame</strong> | <code>bool</code> | Enables the &ldquo;Play Game&rdquo; button on the main menu.</p>
+
+<hr />
+
+<h4>EngineSettings: Combat</h4>
+
+<p>Description of engine/combat.txt</p>
+
+<p><strong>absorb_percent</strong> | <code>int, int : Minimum, Maximum</code> | Limits the percentage of damage that can be absorbed.</p>
+
+<p><strong>resist_percent</strong> | <code>int, int : Minimum, Maximum</code> | Limits the percentage of damage that can be resisted.</p>
+
+<p><strong>block_percent</strong> | <code>int, int : Minimum, Maximum</code> | Limits the percentage of damage that can be blocked.</p>
+
+<p><strong>avoidance_percent</strong> | <code>int, int : Minimum, Maximum</code> | Limits the percentage chance that damage will be avoided.</p>
+
+<p><strong>miss_damage_percent</strong> | <code>int, int : Minimum, Maximum</code> | The percentage of damage dealt when a miss occurs.</p>
+
+<p><strong>crit_damage_percent</strong> | <code>int, int : Minimum, Maximum</code> | The percentage of damage dealt when a critical hit occurs.</p>
+
+<p><strong>overhit_damage_percent</strong> | <code>int, int : Minimum, Maximum</code> | The percentage of damage dealt when an overhit occurs.</p>
+
+<hr />
+
+<h4>EngineSettings: Elements</h4>
+
+<p>Description of engine/elements.txt</p>
+
+<p><strong>element.id</strong> | <code>string</code> | An identifier for this element.</p>
+
+<p><strong>element.name</strong> | <code>string</code> | The displayed name of this element.</p>
+
+<hr />
+
+<h4>EngineSettings: Equip flags</h4>
+
+<p>Description of engine/equip_flags.txt</p>
+
+<p><strong>flag.id</strong> | <code>string</code> | An identifier for this equip flag.</p>
+
+<p><strong>flag.name</strong> | <code>string</code> | The displayed name of this equip flag.</p>
+
+<hr />
+
+<h4>EngineSettings: Primary Stats</h4>
+
+<p>Description of engine/primary_stats.txt</p>
+
+<p><strong>stat.id</strong> | <code>string</code> | An identifier for this primary stat.</p>
+
+<p><strong>stat.name</strong> | <code>string</code> | The displayed name of this primary stat.</p>
+
+<hr />
+
+<h4>EngineSettings: Classes</h4>
+
+<p>Description of engine/classes.txt</p>
+
+<p><strong>name</strong> | <code>string</code> | The displayed name of this class.</p>
+
+<p><strong>description</strong> | <code>string</code> | A description of this class.</p>
+
+<p><strong>currency</strong> | <code>int</code> | The amount of currency this class will start with.</p>
+
+<p><strong>equipment</strong> | <code>list(item_id)</code> | A list of items that are equipped when starting with this class.</p>
+
+<p><strong>carried</strong> | <code>list(item_id)</code> | A list of items that are placed in the normal inventorty when starting with this class.</p>
+
+<p><strong>primary</strong> | <code>predefined_string, int : Primary stat name, Default value</code> | Class starts with this value for the specified stat.</p>
+
+<p><strong>actionbar</strong> | <code>list(power_id)</code> | A list of powers to place in the action bar for the class.</p>
+
+<p><strong>powers</strong> | <code>list(power_id)</code> | A list of powers that are unlocked when starting this class.</p>
+
+<p><strong>campaign</strong> | <code>list(string)</code> | A list of campaign statuses that are set when starting this class.</p>
+
+<p><strong>power_tree</strong> | <code>string</code> | Power tree that will be loaded by MenuPowers</p>
+
+<p><strong>hero_options</strong> | <code>list(int)</code> | A list of indicies of the hero options this class can use.</p>
+
+<p><strong>default_power_tab</strong> | <code>int</code> | Index of the tab to switch to when opening the Powers menu</p>
+
+<hr />
+
+<h4>EngineSettings: Damage Types</h4>
+
+<p>Description of engine/damage_types.txt</p>
+
+<p><strong>damage_type.id</strong> | <code>string</code> | The identifier used for Item damage_type and Power base_damage.</p>
+
+<p><strong>damage_type.name</strong> | <code>string</code> | The displayed name for the value of this damage type.</p>
+
+<p><strong>damage_type.name_min</strong> | <code>string</code> | The displayed name for the minimum value of this damage type.</p>
+
+<p><strong>damage_type.name_max</strong> | <code>string</code> | The displayed name for the maximum value of this damage type.</p>
+
+<p><strong>damage_type.description</strong> | <code>string</code> | The description that will be displayed in the Character menu tooltips.</p>
+
+<p><strong>damage_type.min</strong> | <code>string</code> | The identifier used as a Stat type and an Effect type, for the minimum damage of this type.</p>
+
+<p><strong>damage_type.max</strong> | <code>string</code> | The identifier used as a Stat type and an Effect type, for the maximum damage of this type.</p>
+
+<hr />
+
+<h4>EngineSettings: Death penalty</h4>
+
+<p>Description of engine/death_penalty.txt</p>
+
+<p><strong>enable</strong> | <code>bool</code> | Enable the death penalty.</p>
+
+<p><strong>permadeath</strong> | <code>bool</code> | Force permadeath for all new saves.</p>
+
+<p><strong>currency</strong> | <code>int</code> | Remove this percentage of currency.</p>
+
+<p><strong>xp_total</strong> | <code>int</code> | Remove this percentage of total XP.</p>
+
+<p><strong>xp_current_level</strong> | <code>int</code> | Remove this percentage of the XP gained since the last level.</p>
+
+<p><strong>random_item</strong> | <code>bool</code> | Removes a random item from the player&rsquo;s inventory.</p>
+
+<hr />
+
+<h4>EngineSettings: Tooltips</h4>
+
+<p>Description of engine/tooltips.txt</p>
+
+<p><strong>tooltip_offset</strong> | <code>int</code> | Offset in pixels from the origin point (usually mouse cursor).</p>
+
+<p><strong>tooltip_width</strong> | <code>int</code> | Maximum width of tooltip in pixels.</p>
+
+<p><strong>tooltip_margin</strong> | <code>int</code> | Padding between the text and the tooltip borders.</p>
+
+<p><strong>npc_tooltip_margin</strong> | <code>int</code> | Vertical offset for NPC labels.</p>
+
+<p><strong>tooltip_background_border</strong> | <code>int</code> | The pixel size of the border in &ldquo;images/menus/tooltips.png&rdquo;.</p>
+
+<hr />
+
+<h4>EngineSettings: Loot</h4>
+
+<p>Description of engine/loot.txt</p>
+
+<p><strong>tooltip_margin</strong> | <code>int</code> | Vertical offset of the loot tooltip from the loot itself.</p>
+
+<p><strong>autopickup_currency</strong> | <code>bool</code> | Enable autopickup for currency</p>
+
+<p><strong>autopickup_range</strong> | <code>float</code> | Minimum distance the player must be from loot to trigger autopickup.</p>
+
+<p><strong>currency_name</strong> | <code>string</code> | Define the name of currency in game</p>
+
+<p><strong>vendor_ratio</strong> | <code>int</code> | Percentage of item buying price to use as selling price. Also used as the buyback price until the player leaves the map.</p>
+
+<p><strong>vendor_ratio_buyback</strong> | <code>int</code> | Percentage of item buying price to use as the buying price for previously sold items.</p>
+
+<p><strong>sfx_loot</strong> | <code>filename</code> | Filename of a sound effect to play for dropping loot.</p>
+
+<p><strong>drop_max</strong> | <code>int</code> | The maximum number of random item stacks that can drop at once</p>
+
+<p><strong>drop_radius</strong> | <code>int</code> | The distance (in tiles) away from the origin that loot can drop</p>
+
+<p><strong>hide_radius</strong> | <code>float</code> | If an entity is within this radius relative to a piece of loot, the label will be hidden unless highlighted with the cursor.</p>
+
+<hr />
+
+<h4>EngineSettings: Tileset config</h4>
+
+<p>Description of engine/tileset_config.txt</p>
+
+<p><strong>tile_size</strong> | <code>int, int : Width, Height</code> | The width and height of a tile.</p>
+
+<p><strong>orientation</strong> | <code>["isometric", "orthogonal"]</code> | The perspective of tiles; isometric or orthogonal.</p>
+
+<hr />
+
+<h4>EngineSettings: Widgets</h4>
+
+<p>Description of engine/widget_settings.txt</p>
+
+<p><strong>misc.selection_rect_color</strong> | <code>color, int : Color, Alpha</code> | Color of the selection rectangle when navigating widgets without a mouse.</p>
+
+<p><strong>misc.colorblind_highlight_offset</strong> | <code>int, int : X offset, Y offset</code> | The pixel offset of the &lsquo;*&rsquo; marker on highlighted icons in colorblind mode.</p>
+
+<p><strong>tab.padding</strong> | <code>int, int : Left/right padding, Top padding</code> | The pixel padding around tabs. Controls how the left and right edges are drawn.</p>
+
+<p><strong>slot.quantity_label</strong> | <code>label</code> | Setting for the slot quantity text.</p>
+
+<p><strong>slot.quantity_bg_color</strong> | <code>color, int : Color, Alpha</code> | If a slot has a quantity, a rectangle filled with this color will be placed beneath the text.</p>
+
+<p><strong>listbox.text_margin</strong> | <code>int, int : Left margin, Right margin</code> | The pixel margin to leave on the left and right sides of listbox element text.</p>
+
+<p><strong>horizontal_list.text_width</strong> | <code>int</code> | The pixel width of the text area that displays the currently selected item. Default is 150 pixels;</p>
+
+<hr />
+
+<h4>EngineSettings: XP table</h4>
+
+<p>Description of engine/xp_table.txt</p>
+
+<p><strong>level</strong> | <code>int, int : Level, XP</code> | The amount of XP required for this level.</p>
+
+<hr />
+
+<h4>EventManager</h4>
+
+<p>Description of events in maps/ and npcs/</p>
+
+<p><strong>event.type</strong> | <code>string</code> | (IGNORED BY ENGINE) The &ldquo;type&rdquo; field, as used by Tiled and other mapping tools.</p>
+
+<p><strong>event.activate</strong> | <code>["on_trigger", "on_load", "on_leave", "on_mapexit", "on_clear", "static"]</code> | Set the state in which the event will be activated (map events only).</p>
+
+<p><strong>event.location</strong> | <code>rectangle</code> | Defines the location area for the event.</p>
+
+<p><strong>event.hotspot</strong> | <code>["location", rectangle]</code> | Event uses location as hotspot or defined by rect.</p>
+
+<p><strong>event.cooldown</strong> | <code>duration</code> | Duration for event cooldown in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>event.delay</strong> | <code>duration</code> | Event will execute after a specified duration.</p>
+
+<p><strong>event.reachable_from</strong> | <code>rectangle</code> | If the hero is inside this rectangle, they can activate the event.</p>
+
+<p><strong>event.tooltip</strong> | <code>string</code> | Tooltip for event</p>
+
+<p><strong>event.power_path</strong> | <code>int, int, ["hero", point] : Source X, Source Y, Destination</code> | Path that an event power will take.</p>
+
+<p><strong>event.power_damage</strong> | <code>int, int : Min, Max</code> | Range of power damage</p>
+
+<p><strong>event.intermap</strong> | <code>filename, int, int : Map file, X, Y</code> | Jump to specific map at location specified.</p>
+
+<p><strong>event.intermap_random</strong> | <code>filename</code> | Pick a random map from a map list file and teleport to it.</p>
+
+<p><strong>event.intramap</strong> | <code>int, int : X, Y</code> | Jump to specific position within current map.</p>
+
+<p><strong>event.mapmod</strong> | <code>list(predefined_string, int, int, int) : Layer, X, Y, Tile ID</code> | Modify map tiles</p>
+
+<p><strong>event.soundfx</strong> | <code>filename, int, int, bool : Sound file, X, Y, loop</code> | Filename of a sound to play. Optionally, it can be played at a specific location and/or looped.</p>
+
+<p><strong>event.loot</strong> | <code>list(loot)</code> | Add loot to the event.</p>
+
+<p><strong>event.loot_count</strong> | <code>int, int : Min, Max</code> | Sets the minimum (and optionally, the maximum) amount of loot this event can drop. Overrides the global drop_max setting.</p>
+
+<p><strong>event.msg</strong> | <code>string</code> | Adds a message to be displayed for the event.</p>
+
+<p><strong>event.shakycam</strong> | <code>duration</code> | Makes the camera shake for this duration in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>event.requires_status</strong> | <code>list(string)</code> | Event requires list of statuses</p>
+
+<p><strong>event.requires_not_status</strong> | <code>list(string)</code> | Event requires not list of statuses</p>
+
+<p><strong>event.requires_level</strong> | <code>int</code> | Event requires hero level</p>
+
+<p><strong>event.requires_not_level</strong> | <code>int</code> | Event requires not hero level</p>
+
+<p><strong>event.requires_currency</strong> | <code>int</code> | Event requires atleast this much currency</p>
+
+<p><strong>event.requires_not_currency</strong> | <code>int</code> | Event requires no more than this much currency</p>
+
+<p><strong>event.requires_item</strong> | <code>list(item_id)</code> | Event requires specific item (not equipped)</p>
+
+<p><strong>event.requires_not_item</strong> | <code>list(item_id)</code> | Event requires not having a specific item (not equipped)</p>
+
+<p><strong>event.requires_class</strong> | <code>predefined_string</code> | Event requires this base class</p>
+
+<p><strong>event.requires_not_class</strong> | <code>predefined_string</code> | Event requires not this base class</p>
+
+<p><strong>event.set_status</strong> | <code>list(string)</code> | Sets specified statuses</p>
+
+<p><strong>event.unset_status</strong> | <code>list(string)</code> | Unsets specified statuses</p>
+
+<p><strong>event.remove_currency</strong> | <code>int</code> | Removes specified amount of currency from hero inventory</p>
+
+<p><strong>event.remove_item</strong> | <code>list(item_id)</code> | Removes specified item from hero inventory</p>
+
+<p><strong>event.reward_xp</strong> | <code>int</code> | Reward hero with specified amount of experience points.</p>
+
+<p><strong>event.reward_currency</strong> | <code>int</code> | Reward hero with specified amount of currency.</p>
+
+<p><strong>event.reward_item</strong> | <code>item_id, int : Item, Quantity</code> | Reward hero with y number of item x.</p>
+
+<p><strong>event.reward_loot</strong> | <code>list(loot)</code> | Reward hero with random loot.</p>
+
+<p><strong>event.reward_loot_count</strong> | <code>int, int : Min, Max</code> | Sets the minimum (and optionally, the maximum) amount of loot that reward_loot can give the hero. Defaults to 1.</p>
+
+<p><strong>event.restore</strong> | <code>["hp", "mp", "hpmp", "status", "all"]</code> | Restore the hero&rsquo;s HP, MP, and/or status.</p>
+
+<p><strong>event.power</strong> | <code>power_id</code> | Specify power coupled with event.</p>
+
+<p><strong>event.spawn</strong> | <code>list(predefined_string, int, int) : Enemy category, X, Y</code> | Spawn an enemy from this category at location</p>
+
+<p><strong>event.stash</strong> | <code>bool</code> | If true, the Stash menu if opened.</p>
+
+<p><strong>event.npc</strong> | <code>filename</code> | Filename of an NPC to start dialog with.</p>
+
+<p><strong>event.music</strong> | <code>filename</code> | Change background music to specified file.</p>
+
+<p><strong>event.cutscene</strong> | <code>filename</code> | Show specified cutscene by filename.</p>
+
+<p><strong>event.repeat</strong> | <code>bool</code> | If true, the event to be triggered again.</p>
+
+<p><strong>event.save_game</strong> | <code>bool</code> | If true, the game is saved when the event is triggered. The respawn position is set to where the player is standing.</p>
+
+<p><strong>event.book</strong> | <code>filename</code> | Opens a book by filename.</p>
+
+<p><strong>event.script</strong> | <code>filename</code> | Loads and executes an Event from a file.</p>
+
+<p><strong>event.chance_exec</strong> | <code>int</code> | Percentage chance that this event will execute when triggered.</p>
+
+<p><strong>event.respec</strong> | <code>["xp", "stats", "powers"], bool : Respec mode, Ignore class defaults</code> | Resets various aspects of the character&rsquo;s progression. Resetting &ldquo;xp&rdquo; also resets &ldquo;stats&rdquo;. Resetting &ldquo;stats&rdquo; also resets &ldquo;powers&rdquo;.</p>
+
+<hr />
+
+<h4>EventManager: Random Map List</h4>
+
+<p>Description of maps/random/lists/</p>
+
+<p><strong>map</strong> | <code>filename, int, int : Map file, X, Y</code> | Adds a map and optional spawn position to the random list of maps to teleport to.</p>
+
+<hr />
+
+<h4>FontEngine: Font colors</h4>
+
+<p>Description of engine/font_colors.txt</p>
+
+<p><strong>menu_normal</strong> | <code>color</code> | Basic menu text color. Recommended  white.</p>
+
+<p><strong>menu_bonus</strong> | <code>color</code> | Positive menu text color. Recommended  green.</p>
+
+<p><strong>menu_penalty</strong> | <code>color</code> | Negative menu text color. Recommended  red.</p>
+
+<p><strong>widget_normal</strong> | <code>color</code> | Basic widget text color. Recommended  white.</p>
+
+<p><strong>widget_disabled</strong> | <code>color</code> | Disabled widget text color. Recommended  grey.</p>
+
+<p><strong>combat_givedmg</strong> | <code>color</code> | Enemy damage text color. Recommended  white.</p>
+
+<p><strong>combat_takedmg</strong> | <code>color</code> | Player damage text color. Recommended  red.</p>
+
+<p><strong>combat_crit</strong> | <code>color</code> | Enemy critical damage text color. Recommended  yellow.</p>
+
+<p><strong>combat_buff</strong> | <code>color</code> | Healing/buff text color. Recommended  green.</p>
+
+<p><strong>combat_miss</strong> | <code>color</code> | Missed attack text color. Recommended  grey.</p>
+
+<p><strong>requirements_not_met</strong> | <code>color</code> | Unmet requirements text color. Recommended  red.</p>
+
+<p><strong>item_bonus</strong> | <code>color</code> | Item bonus text color. Recommended  green.</p>
+
+<p><strong>item_penalty</strong> | <code>color</code> | Item penalty text color. Recommended  red.</p>
+
+<p><strong>item_flavor</strong> | <code>color</code> | Item flavor text color. Recommended  grey.</p>
+
+<p><strong>hardcore_color_name</strong> | <code>color</code> | Permadeath save slot player name color. Recommended  red.</p>
+
+<hr />
+
+<h4>Cutscene</h4>
+
+<p>Description of cutscenes in cutscenes/</p>
+
+<p><strong>caption_margins</strong> | <code>float, float : X margin, Y margin</code> | Percentage-based margins for the caption text based on screen size</p>
+
+<p><strong>caption_background</strong> | <code>color, int : Color, Alpha</code> | Color (RGBA) of the caption area background.</p>
+
+<p><strong>vscroll_speed</strong> | <code>float</code> | The speed at which elements will scroll in &lsquo;vscroll&rsquo; scenes.</p>
+
+<p><strong>menu_backgrounds</strong> | <code>bool</code> | This cutscene will use a random fullscreen background image, like the title screen does</p>
+
+<p><strong>music</strong> | <code>filename</code> | The music file that will play during this cutscene.</p>
+
+<p><strong>scene.caption</strong> | <code>string</code> | A caption that will be shown.</p>
+
+<p><strong>scene.image</strong> | <code>filename, int : Filename, Scaling type</code> | Filename of an image that will be shown. The scaling type is a value between 0-2, corresponding to  none, fit height, fit screen.</p>
+
+<p><strong>scene.pause</strong> | <code>duration</code> | Pause before next component in &lsquo;ms&rsquo; or &rsquo;s'. A value of &lsquo;-1&rsquo; may be used to pause indefinitely.</p>
+
+<p><strong>scene.soundfx</strong> | <code>filename</code> | Filename of a sound that will be played</p>
+
+<p><strong>vscroll.text</strong> | <code>string</code> | A single, non-wrapping line of text.</p>
+
+<p><strong>vscroll.image</strong> | <code>filename</code> | Filename of an image that will be shown.</p>
+
+<p><strong>vscroll.separator</strong> | <code>int</code> | Places an invisible gap of a specified height between elements.</p>
+
+<hr />
+
+<h4>GameStateLoad</h4>
+
+<p>Description of menus/gameload.txt</p>
+
+<p><strong>button_new</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;New Game&rdquo; button.</p>
+
+<p><strong>button_load</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Load Game&rdquo; button.</p>
+
+<p><strong>button_delete</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Delete Save&rdquo; button.</p>
+
+<p><strong>button_exit</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Exit to Title&rdquo; button.</p>
+
+<p><strong>portrait</strong> | <code>rectangle</code> | Position and dimensions of the portrait image.</p>
+
+<p><strong>gameslot</strong> | <code>rectangle</code> | Position and dimensions of the first game slot.</p>
+
+<p><strong>name</strong> | <code>label</code> | The label for the hero&rsquo;s name. Position is relative to game slot position.</p>
+
+<p><strong>level</strong> | <code>label</code> | The label for the hero&rsquo;s level. Position is relative to game slot position.</p>
+
+<p><strong>class</strong> | <code>label</code> | The label for the hero&rsquo;s class. Position is relative to game slot position.</p>
+
+<p><strong>map</strong> | <code>label</code> | The label for the hero&rsquo;s current location. Position is relative to game slot position.</p>
+
+<p><strong>slot_number</strong> | <code>label</code> | The label for the save slot index. Position is relative to game slot position.</p>
+
+<p><strong>loading_label</strong> | <code>label</code> | The label for the &ldquo;Entering game world&hellip;&rdquo;/&ldquo;Loading saved game&hellip;&rdquo; text.</p>
+
+<p><strong>sprite</strong> | <code>point</code> | Position for the avatar preview image in each slot</p>
+
+<p><strong>visible_slots</strong> | <code>int</code> | The maximum numbers of visible save slots.</p>
+
+<p><strong>text_trim_boundary</strong> | <code>int</code> | The position of the right-side boundary where text will be shortened with an ellipsis. Position is relative to game slot position.</p>
+
+<hr />
+
+<h4>GameStateNew: Layout</h4>
+
+<p>Description of menus/gamenew.txt</p>
+
+<p><strong>button_prev</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of button to choose the previous preset hero.</p>
+
+<p><strong>button_next</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of button to choose the next preset hero.</p>
+
+<p><strong>button_exit</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of &ldquo;Cancel&rdquo; button.</p>
+
+<p><strong>button_create</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of &ldquo;Create&rdquo; button.</p>
+
+<p><strong>button_permadeath</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of checkbox for toggling permadeath.</p>
+
+<p><strong>bytton_randomize</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Randomize&rdquo; button.</p>
+
+<p><strong>name_input</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the hero name textbox.</p>
+
+<p><strong>portrait_label</strong> | <code>label</code> | Label for the &ldquo;Choose a Portrait&rdquo; text.</p>
+
+<p><strong>name_label</strong> | <code>label</code> | Label for the &ldquo;Choose a Name&rdquo; text.</p>
+
+<p><strong>permadeath_label</strong> | <code>label</code> | Label for the &ldquo;Permadeath?&rdquo; text.</p>
+
+<p><strong>classlist_label</strong> | <code>label</code> | Label for the &ldquo;Choose a Class&rdquo; text.</p>
+
+<p><strong>classlist_height</strong> | <code>int</code> | Number of visible rows for the class list widget.</p>
+
+<p><strong>portrait</strong> | <code>rectangle</code> | Position and dimensions of the portrait image.</p>
+
+<p><strong>class_list</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the class list.</p>
+
+<p><strong>show_classlist</strong> | <code>bool</code> | Allows hiding the class list.</p>
+
+<p><strong>random_option</strong> | <code>bool</code> | Initially picks a random character option (aka portrait/name).</p>
+
+<p><strong>random_class</strong> | <code>bool</code> | Initially picks a random character class.</p>
+
+<hr />
+
+<h4>GameStateNew: Hero options</h4>
+
+<p>Description of engine/hero_options.txt</p>
+
+<p><strong>option</strong> | <code>int, string, string, filename, string : Index, Base, Head, Portrait, Name</code> | A default body, head, portrait, and name for a hero.</p>
+
+<hr />
+
+<h4>GameStatePlay: Titles</h4>
+
+<p>Description of engine/titles.txt</p>
+
+<p><strong>title.title</strong> | <code>string</code> | The displayed title.</p>
+
+<p><strong>title.level</strong> | <code>int</code> | Requires level.</p>
+
+<p><strong>title.power</strong> | <code>power_id</code> | Requires power.</p>
+
+<p><strong>title.requires_status</strong> | <code>list(string)</code> | Requires status.</p>
+
+<p><strong>title.requires_not_status</strong> | <code>list(string)</code> | Requires not status.</p>
+
+<p><strong>title.primary_stat</strong> | <code>predefined_string, predefined_string : Primary stat, Lesser primary stat</code> | Required primary stat(s). The lesser stat is optional.</p>
+
+<hr />
+
+<h4>GameStateTitle</h4>
+
+<p>Description of menus/gametitle.txt</p>
+
+<p><strong>logo</strong> | <code>filename, int, int, alignment : Image file, X, Y, Alignment</code> | Filename and position of the main logo image.</p>
+
+<p><strong>play_pos</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Play Game&rdquo; button.</p>
+
+<p><strong>config_pos</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Configuration&rdquo; button.</p>
+
+<p><strong>credits_pos</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Credits&rdquo; button.</p>
+
+<p><strong>exit_pos</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Exit Game&rdquo; button.</p>
+
+<hr />
+
+<h4>GameSwitcher: Default music</h4>
+
+<p>Description of engine/default_music.txt</p>
+
+<p><strong>music</strong> | <code>filename</code> | Filename of a music file to play during game states that don&rsquo;t already have music.</p>
+
+<hr />
+
+<h4>GameSwitcher: Background images</h4>
+
+<p>Description of engine/menu_backgrounds.txt</p>
+
+<p><strong>background</strong> | <code>repeatable(filename)</code> | Filename of a background image to be added to the pool of random menu backgrounds</p>
+
+<hr />
+
+<h4>GameSwitcher: FPS counter</h4>
+
+<p>Description of menus/fps.txt</p>
+
+<p><strong>position</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the fps counter.</p>
+
+<p><strong>color</strong> | <code>color</code> | Color of the fps counter text.</p>
+
+<hr />
+
+<h4>IconManager</h4>
+
+<p>Description of engine/icons.txt</p>
+
+<p><strong>icon_set</strong> | <code>repeatable(icon_id, filename) : First ID, Image file</code> | Defines an icon graphics file to load, as well as the index of the first icon.</p>
+
+<p><strong>text_offset</strong> | <code>point</code> | A pixel offset from the top-left to place item quantity text on icons.</p>
+
+<hr />
+
+<h4>InputState: Default Keybindings</h4>
+
+<p>Description of engine/default_keybindings.txt. Use <strong>-1</strong> for no binding. Keyboard values can be any of the key names listed in the <a href="https://wiki.libsdl.org/SDL_Keycode">SDL docs</a>. Mouse values are in the format <strong>mouse_0</strong>. Joystick buttons are in the format <strong>joy_0</strong>. Joystick axis are in the format <strong>axis_0-</strong> or <strong>axis_0+</strong>.</p>
+
+<p><strong>default.cancel</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Cancel&rdquo;.</p>
+
+<p><strong>default.accept</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Accept&rdquo;.</p>
+
+<p><strong>default.up</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Up&rdquo;.</p>
+
+<p><strong>default.down</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Down&rdquo;.</p>
+
+<p><strong>default.left</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Left&rdquo;.</p>
+
+<p><strong>default.right</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Right&rdquo;.</p>
+
+<p><strong>default.bar1</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar1&rdquo;.</p>
+
+<p><strong>default.bar2</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar2&rdquo;.</p>
+
+<p><strong>default.bar3</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar3&rdquo;.</p>
+
+<p><strong>default.bar4</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar4&rdquo;.</p>
+
+<p><strong>default.bar5</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar5&rdquo;.</p>
+
+<p><strong>default.bar6</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar6&rdquo;.</p>
+
+<p><strong>default.bar7</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar7&rdquo;.</p>
+
+<p><strong>default.bar8</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar8&rdquo;.</p>
+
+<p><strong>default.bar9</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar9&rdquo;.</p>
+
+<p><strong>default.bar0</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Bar0&rdquo;.</p>
+
+<p><strong>default.main1</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Main1&rdquo;.</p>
+
+<p><strong>default.main2</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Main2&rdquo;.</p>
+
+<p><strong>default.character</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Character&rdquo;.</p>
+
+<p><strong>default.inventory</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Inventory&rdquo;.</p>
+
+<p><strong>default.powers</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Powers&rdquo;.</p>
+
+<p><strong>default.log</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Log&rdquo;.</p>
+
+<p><strong>default.ctrl</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Ctrl&rdquo;.</p>
+
+<p><strong>default.shift</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Shift&rdquo;.</p>
+
+<p><strong>default.alt</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Alt&rdquo;.</p>
+
+<p><strong>default.delete</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Delete&rdquo;.</p>
+
+<p><strong>default.actionbar</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Actionbar Accept&rdquo;.</p>
+
+<p><strong>default.actionbar_back</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Actionbar Left&rdquo;.</p>
+
+<p><strong>default.actionbar_forward</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Actionbar Right&rdquo;.</p>
+
+<p><strong>default.actionbar_use</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Actionbar Use&rdquo;.</p>
+
+<p><strong>default.developer_menu</strong> | <code>string, string, string : Keyboard/mouse 1, Keyboard/mouse 2, Joystick</code> | Bindings for &ldquo;Developer Menu&rdquo;.</p>
+
+<hr />
+
+<h4>ItemManager: Items</h4>
+
+<p>Description about the class and it usage, items/items.txt&hellip;</p>
+
+<p><strong>id</strong> | <code>item_id</code> | An uniq id of the item used as reference from other classes.</p>
+
+<p><strong>name</strong> | <code>string</code> | Item name displayed on long and short tooltips.</p>
+
+<p><strong>flavor</strong> | <code>string</code> | A description of the item.</p>
+
+<p><strong>level</strong> | <code>int</code> | The item&rsquo;s level. Has no gameplay impact. (Deprecated?)</p>
+
+<p><strong>icon</strong> | <code>icon_id</code> | An id for the icon to display for this item.</p>
+
+<p><strong>book</strong> | <code>filename</code> | A book file to open when this item is activated.</p>
+
+<p><strong>book_is_readable</strong> | <code>bool</code> | If true, &ldquo;read&rdquo; is displayed in the tooltip instead of &ldquo;use&rdquo;. Defaults to true.</p>
+
+<p><strong>quality</strong> | <code>predefined_string</code> | Item quality matching an id in items/qualities.txt</p>
+
+<p><strong>item_type</strong> | <code>predefined_string</code> | Equipment slot matching an id in items/types.txt</p>
+
+<p><strong>equip_flags</strong> | <code>list(predefined_string)</code> | A comma separated list of flags to set when this item is equipped. See engine/equip_flags.txt.</p>
+
+<p><strong>dmg</strong> | <code>predefined_string, int, int : Damage type, Min, Max</code> | Defines the item&rsquo;s base damage type and range. Max may be ommitted and will default to Min.</p>
+
+<p><strong>abs</strong> | <code>int, int : Min, Max</code> | Defines the item absorb value, if only min is specified the absorb value is fixed.</p>
+
+<p><strong>requires_level</strong> | <code>int</code> | The hero&rsquo;s level must match or exceed this value in order to equip this item.</p>
+
+<p><strong>requires_stat</strong> | <code>repeatable(predefined_string, int) : Primary stat name, Value</code> | Make item require specific stat level ex. requires_stat=physical,6 will require hero to have level 6 in physical stats</p>
+
+<p><strong>requires_class</strong> | <code>predefined_string</code> | The hero&rsquo;s base class (engine/classes.txt) must match for this item to be equipped.</p>
+
+<p><strong>bonus</strong> | <code>repeatable(predefined_string, int) : Stat name, Value</code> | Adds a bonus to the item by stat name, example  bonus=hp, 50</p>
+
+<p><strong>bonus_power_level</strong> | <code>repeatable(power_id, int) : Base power, Bonus levels</code> | Grants bonus levels to a given base power.</p>
+
+<p><strong>soundfx</strong> | <code>filename</code> | Sound effect filename to play for the specific item.</p>
+
+<p><strong>gfx</strong> | <code>filename</code> | Filename of an animation set to display when the item is equipped.</p>
+
+<p><strong>loot_animation</strong> | <code>repeatable(filename, int, int) : Loot image, Min quantity, Max quantity</code> | Specifies the loot animation file for the item. The max quantity, or both quantity values, may be omitted.</p>
+
+<p><strong>power</strong> | <code>power_id</code> | Adds a specific power to the item which makes it usable as a power and can be placed in action bar.</p>
+
+<p><strong>replace_power</strong> | <code>repeatable(int, int) : Old power, New power</code> | Replaces the old power id with the new power id in the action bar when equipped.</p>
+
+<p><strong>power_desc</strong> | <code>string</code> | A string describing the additional power.</p>
+
+<p><strong>price</strong> | <code>int</code> | The amount of currency the item costs, if set to 0 the item cannot be sold.</p>
+
+<p><strong>price_per_level</strong> | <code>int</code> | Additional price for each player level above 1</p>
+
+<p><strong>price_sell</strong> | <code>int</code> | The amount of currency the item is sold for, if set to 0 the sell prices is prices*vendor_ratio.</p>
+
+<p><strong>max_quantity</strong> | <code>int</code> | Max item count per stack.</p>
+
+<p><strong>pickup_status</strong> | <code>string</code> | Set a campaign status when item is picked up, this is used for quest items.</p>
+
+<p><strong>stepfx</strong> | <code>predefined_string</code> | Sound effect when walking, this applies only to armors.</p>
+
+<p><strong>disable_slots</strong> | <code>list(predefined_string)</code> | A comma separated list of equip slot types to disable when this item is equipped.</p>
+
+<p><strong>quest_item</strong> | <code>bool</code> | If true, this item is a quest item and can not be dropped, stashed, or sold.</p>
+
+<p><strong>no_stash</strong> | <code>["ignore", "private", "shared", "all"]</code> | If not set to &lsquo;ignore&rsquo;, this item will not be able to be put in the corresponding stash.</p>
+
+<hr />
+
+<h4>ItemManager: Types</h4>
+
+<p>Definition of a item types, items/types.txt&hellip;</p>
+
+<p><strong>type.id</strong> | <code>string</code> | Item type identifier.</p>
+
+<p><strong>type.name</strong> | <code>string</code> | Item type name.</p>
+
+<hr />
+
+<h4>ItemManager: Qualities</h4>
+
+<p>Definition of a item qualities, items/types.txt&hellip;</p>
+
+<p><strong>quality.id</strong> | <code>string</code> | Item quality identifier.</p>
+
+<p><strong>quality.name</strong> | <code>string</code> | Item quality name.</p>
+
+<p><strong>quality.color</strong> | <code>color</code> | Item quality color.</p>
+
+<p><strong>quality.overlay_icon</strong> | <code>icon_id</code> | The icon to be used as an overlay.</p>
+
+<hr />
+
+<h4>ItemManager: Sets</h4>
+
+<p>Definition of a item sets, items/sets.txt&hellip;</p>
+
+<p><strong>id</strong> | <code>int</code> | A uniq id for the item set.</p>
+
+<p><strong>name</strong> | <code>string</code> | Name of the item set.</p>
+
+<p><strong>items</strong> | <code>list(item_id)</code> | List of item id&rsquo;s that is part of the set.</p>
+
+<p><strong>color</strong> | <code>color</code> | A specific of color for the set.</p>
+
+<p><strong>bonus</strong> | <code>repeatable(int, string, int) : Required set item count, Stat name, Value</code> | Bonus to append to items in the set.</p>
+
+<p><strong>bonus_power_level</strong> | <code>repeatable(int, power_id, int) : Required set item count, Base power, Bonus levels</code> | Grants bonus levels to a given base power.</p>
+
+<hr />
+
+<h4>Map</h4>
+
+<p>Description of maps/</p>
+
+<p><strong>title</strong> | <code>string</code> | Title of map</p>
+
+<p><strong>width</strong> | <code>int</code> | Width of map</p>
+
+<p><strong>height</strong> | <code>int</code> | Height of map</p>
+
+<p><strong>tileset</strong> | <code>filename</code> | Filename of a tileset definition to use for map</p>
+
+<p><strong>music</strong> | <code>filename</code> | Filename of background music to use for map</p>
+
+<p><strong>hero_pos</strong> | <code>point</code> | The player will spawn in this location if no point was previously given.</p>
+
+<p><strong>parallax_layers</strong> | <code>filename</code> | Filename of a parallax layers definition.</p>
+
+<p><strong>background_color</strong> | <code>color, int : Color, alpha</code> | Background color for the map.</p>
+
+<p><strong>tilewidth</strong> | <code>int</code> | Inherited from Tiled map file. Unused by engine.</p>
+
+<p><strong>tileheight</strong> | <code>int</code> | Inherited from Tiled map file. Unused by engine.</p>
+
+<p><strong>layer.type</strong> | <code>string</code> | Map layer type.</p>
+
+<p><strong>layer.format</strong> | <code>string</code> | Format for map layer, must be &lsquo;dec&rsquo;</p>
+
+<p><strong>layer.data</strong> | <code>raw</code> | Raw map layer data</p>
+
+<p><strong>enemygroup.type</strong> | <code>string</code> | (IGNORED BY ENGINE) The &ldquo;type&rdquo; field, as used by Tiled and other mapping tools.</p>
+
+<p><strong>enemygroup.category</strong> | <code>predefined_string</code> | The category of enemies that will spawn in this group.</p>
+
+<p><strong>enemygroup.level</strong> | <code>int, int : Min, Max</code> | Defines the level range of enemies in group. If only one number is given, it&rsquo;s the exact level.</p>
+
+<p><strong>enemygroup.location</strong> | <code>rectangle</code> | Location area for enemygroup</p>
+
+<p><strong>enemygroup.number</strong> | <code>int, int : Min, Max</code> | Defines the range of enemies in group. If only one number is given, it&rsquo;s the exact amount.</p>
+
+<p><strong>enemygroup.chance</strong> | <code>int</code> | Percentage of chance</p>
+
+<p><strong>enemygroup.direction</strong> | <code>direction</code> | Direction that enemies will initially face.</p>
+
+<p><strong>enemygroup.waypoints</strong> | <code>list(point)</code> | Enemy waypoints; single enemy only; negates wander_radius</p>
+
+<p><strong>enemygroup.wander_radius</strong> | <code>int</code> | The radius (in tiles) that an enemy will wander around randomly; negates waypoints</p>
+
+<p><strong>enemygroup.requires_status</strong> | <code>list(string)</code> | Status required for loading enemies</p>
+
+<p><strong>enemygroup.requires_not_status</strong> | <code>list(string)</code> | Status required to be missing for loading enemies</p>
+
+<p><strong>enemygroup.invincible_requires_status</strong> | <code>list(string)</code> | Enemies in this group are invincible to hero attacks when these statuses are set.</p>
+
+<p><strong>enemygroup.invincible_requires_not_status</strong> | <code>list(string)</code> | Enemies in this group are invincible to hero attacks when these statuses are not set.</p>
+
+<p><strong>npc.type</strong> | <code>string</code> | (IGNORED BY ENGINE) The &ldquo;type&rdquo; field, as used by Tiled and other mapping tools.</p>
+
+<p><strong>npc.filename</strong> | <code>string</code> | Filename of an NPC definition.</p>
+
+<p><strong>npc.requires_status</strong> | <code>list(string)</code> | Status required for NPC load. There can be multiple states, separated by comma</p>
+
+<p><strong>npc.requires_not_status</strong> | <code>list(string)</code> | Status required to be missing for NPC load. There can be multiple states, separated by comma</p>
+
+<p><strong>npc.location</strong> | <code>point</code> | Location of NPC</p>
+
+<hr />
+
+<h4>MapParallax</h4>
+
+<p>Description of maps/parallax/</p>
+
+<p><strong>layer.image</strong> | <code>filename</code> | Image file to use as a scrolling background.</p>
+
+<p><strong>layer.speed</strong> | <code>float</code> | Speed at which the background will move relative to the camera.</p>
+
+<p><strong>layer.fixed_speed</strong> | <code>float, float : X speed, Y speed</code> | Speed at which the background will move independent of the camera movement.</p>
+
+<p><strong>layer.map_layer</strong> | <code>string</code> | The tile map layer that this parallax layer will be rendered on top of.</p>
+
+<hr />
+
+<h4>MenuActionBar</h4>
+
+<p>Description of menus/actionbar.txt</p>
+
+<p><strong>slot</strong> | <code>repeatable(int, int, int, bool) : Index, X, Y, Locked</code> | Index (max 10) and position for power slot. If a slot is locked, its Power can&rsquo;t be changed by the player.</p>
+
+<p><strong>slot_M1</strong> | <code>point, bool : Position, Locked</code> | Position for the primary action slot. If the slot is locked, its Power can&rsquo;t be changed by the player.</p>
+
+<p><strong>slot_M2</strong> | <code>point, bool : Position Locked</code> | Position for the secondary action slot. If the slot is locked, its Power can&rsquo;t be changed by the player.</p>
+
+<p><strong>char_menu</strong> | <code>point</code> | Position for the Character menu button.</p>
+
+<p><strong>inv_menu</strong> | <code>point</code> | Position for the Inventory menu button.</p>
+
+<p><strong>powers_menu</strong> | <code>point</code> | Position for the Powers menu button.</p>
+
+<p><strong>log_menu</strong> | <code>point</code> | Position for the Log menu button.</p>
+
+<hr />
+
+<h4>MenuActiveEffects</h4>
+
+<p>Description of menus/activeeffects.txt</p>
+
+<p><strong>vertical</strong> | <code>bool</code> | True is vertical orientation; False is horizontal orientation.</p>
+
+<hr />
+
+<h4>MenuBook</h4>
+
+<p>Description of books in books/</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>background</strong> | <code>filename</code> | Filename for the background image.</p>
+
+<p><strong>image.image_pos</strong> | <code>point</code> | Position of the image.</p>
+
+<p><strong>image.image</strong> | <code>filename</code> | Filename of the image.</p>
+
+<p><strong>image_icon</strong> | <code>icon_id</code> | Use an icon as the image instead of a file.</p>
+
+<p><strong>image.requires_status</strong> | <code>list(string)</code> | Image requires these campaign statuses in order to be visible.</p>
+
+<p><strong>image.requires_not_status</strong> | <code>list(string)</code> | Image must not have any of these campaign statuses in order to be visible.</p>
+
+<p><strong>text.text_pos</strong> | <code>int, int, int, ["left", "center", "right"] : X, Y, Width, Text justify</code> | Position of the text.</p>
+
+<p><strong>text.text_font</strong> | <code>color, string : Font color, Font style</code> | Font color and style.</p>
+
+<p><strong>text.shadow</strong> | <code>bool</code> | If true, the text will have a black shadow like the text labels in various menus.</p>
+
+<p><strong>text.text</strong> | <code>string</code> | The text to be displayed.</p>
+
+<p><strong>text.requires_status</strong> | <code>list(string)</code> | Text requires these campaign statuses in order to be visible.</p>
+
+<p><strong>text.requires_not_status</strong> | <code>list(string)</code> | Text must not have any of these campaign statuses in order to be visible.</p>
+
+<p><strong>button.button_pos</strong> | <code>point</code> | Position of the button.</p>
+
+<p><strong>button.button_image</strong> | <code>filename</code> | Image file to use for this button. Default is the normal menu button.</p>
+
+<p><strong>button.text</strong> | <code>string</code> | Optional text label for the button.</p>
+
+<p><strong>book.${EVENT_COMPONENT}</strong> | <code>Event components to execute when the button is clicked. See the definitions in EventManager for possible attributes.</code> |</p>
+
+<p><strong>event_open.${EVENT_COMPONENT}</strong> | <code>Event components to execute when the book is opened. See the definitions in EventManager for possible attributes.</code> |</p>
+
+<p><strong>event_close.${EVENT_COMPONENT}</strong> | <code>Event components to execute when the book is closed. See the definitions in EventManager for possible attributes.</code> |</p>
+
+<hr />
+
+<h4>MenuCharacter</h4>
+
+<p>Description of menus/character.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Character&rdquo; text.</p>
+
+<p><strong>upgrade_primary</strong> | <code>predefined_string, point : Primary stat name, Button position</code> | Position of the button used to add a stat point to this primary stat.</p>
+
+<p><strong>statlist</strong> | <code>point</code> | Position of the scrollbox containing non-primary stats.</p>
+
+<p><strong>statlist_rows</strong> | <code>int</code> | The height of the statlist in rows.</p>
+
+<p><strong>statlist_scrollbar_offset</strong> | <code>int</code> | Right margin in pixels for the statlist&rsquo;s scrollbar.</p>
+
+<p><strong>label_name</strong> | <code>label</code> | Position of the &ldquo;Name&rdquo; text.</p>
+
+<p><strong>label_level</strong> | <code>label</code> | Position of the &ldquo;Level&rdquo; text.</p>
+
+<p><strong>label_primary</strong> | <code>predefined_string, label : Primary stat name, Text positioning</code> | Position of the text label for this primary stat.</p>
+
+<p><strong>name</strong> | <code>rectangle</code> | Position of the player&rsquo;s name and dimensions of the tooltip hotspot.</p>
+
+<p><strong>level</strong> | <code>rectangle</code> | Position of the player&rsquo;s level and dimensions of the tooltip hotspot.</p>
+
+<p><strong>primary</strong> | <code>predefined_string, rectangle : Primary stat name, Hotspot position</code> | Position of this primary stat value display and dimensions of its tooltip hotspot.</p>
+
+<p><strong>unspent</strong> | <code>label</code> | Position of the label showing the number of unspent stat points.</p>
+
+<p><strong>show_resists</strong> | <code>bool</code> | Hide the elemental &ldquo;Resistance&rdquo; stats in the statlist if set to false.</p>
+
+<p><strong>show_stat</strong> | <code>predefined_string, bool : Stat name / Damage type, Visible</code> | Hide the matching stat or damage type min/max in the statlist if set to false.</p>
+
+<p><strong>name_max_width</strong> | <code>int</code> | The maxiumum width, in pixels, that the character name can occupy until it is abbreviated.</p>
+
+<hr />
+
+<h4>MenuConfig</h4>
+
+<p>Description of menus/config.txt</p>
+
+<p><strong>button_ok</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;OK&rdquo; button. Not used in the pause menu.</p>
+
+<p><strong>button_defaults</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Defaults&rdquo; button. Not used in the pause menu.</p>
+
+<p><strong>button_cancel</strong> | <code>int, int, alignment : X, Y, Alignment</code> | Position of the &ldquo;Cancel&rdquo; button. Not used in the pause menu.</p>
+
+<p><strong>listbox_scrollbar_offset</strong> | <code>int</code> | Horizontal offset from the right of listboxes (mods, languages, etc) to place the scrollbar.</p>
+
+<p><strong>frame_offset</strong> | <code>point</code> | Offset for all the widgets contained under each tab.</p>
+
+<p><strong>tab_offset</strong> | <code>point</code> | Offset for the row of tabs.</p>
+
+<p><strong>activemods</strong> | <code>int, int, int, int : Label X, Label Y, Widget X, Widget Y</code> | Position of the &ldquo;Active Mods&rdquo; list box relative to the frame.</p>
+
+<p><strong>activemods_height</strong> | <code>int</code> | Number of visible rows for the &ldquo;Active Mods&rdquo; list box.</p>
+
+<p><strong>inactivemods</strong> | <code>int, int, int, int : Label X, Label Y, Widget X, Widget Y</code> | Position of the &ldquo;Available Mods&rdquo; list box relative to the frame.</p>
+
+<p><strong>inactivemods_height</strong> | <code>int</code> | Number of visible rows for the &ldquo;Available Mods&rdquo; list box.</p>
+
+<p><strong>activemods_shiftup</strong> | <code>point</code> | Position of the button to shift mods up in &ldquo;Active Mods&rdquo; relative to the frame.</p>
+
+<p><strong>activemods_shiftdown</strong> | <code>point</code> | Position of the button to shift mods down in &ldquo;Active Mods&rdquo; relative to the frame.</p>
+
+<p><strong>activemods_deactivate</strong> | <code>point</code> | Position of the &ldquo;Disable&rdquo; button relative to the frame.</p>
+
+<p><strong>inactivemods_activate</strong> | <code>point</code> | Position of the &ldquo;Enable&rdquo; button relative to the frame.</p>
+
+<p><strong>scrollpane</strong> | <code>rectangle</code> | Position of the keybinding scrollbox relative to the frame.</p>
+
+<p><strong>scrollpane_padding</strong> | <code>int, int : Horizontal padding, Vertical padding</code> | Pixel padding for each item listed in a tab&rsquo;s scroll box.</p>
+
+<p><strong>scrollpane_separator_color</strong> | <code>color</code> | Color of the separator line in between scroll box items.</p>
+
+<p><strong>keybinds_bg_color</strong> | <code>color, int : Color, Alpha</code> | Background color and alpha for the keybindings scrollbox.</p>
+
+<hr />
+
+<h4>Menu</h4>
+
+<p>Description of menus in menus/</p>
+
+<p><strong>pos</strong> | <code>rectangle</code> | Menu position and dimensions</p>
+
+<p><strong>align</strong> | <code>alignment</code> | Position relative to screen edges</p>
+
+<p><strong>soundfx_open</strong> | <code>filename</code> | Filename of a sound to play when opening this menu.</p>
+
+<p><strong>soundfx_close</strong> | <code>filename</code> | Filename of a sound to play when closing this menu.</p>
+
+<hr />
+
+<h4>MenuDevConsole</h4>
+
+<p>Description of menus/devconsole.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Developer Console&rdquo; label.</p>
+
+<p><strong>confirm</strong> | <code>point</code> | Position of the &ldquo;Execute&rdquo; button.</p>
+
+<p><strong>input</strong> | <code>point</code> | Position of the command entry widget.</p>
+
+<p><strong>history</strong> | <code>rectangle</code> | Position and dimensions of the command history.</p>
+
+<hr />
+
+<h4>MenuEnemy</h4>
+
+<p>Description of menus/enemy.txt</p>
+
+<p><strong>bar_pos</strong> | <code>rectangle</code> | Position and dimensions of the health bar.</p>
+
+<p><strong>text_pos</strong> | <code>label</code> | Position of the text displaying the enemy&rsquo;s name and level.</p>
+
+<p><strong>enable_overlay</strong> | <code>bool</code> | If true, shows an overlay of the last message on top of other menus.</p>
+
+<p><strong>start_at_bottom</strong> | <code>bool</code> | If true, messages start at the bottom and get pushed up. If false, messages start at the top and get pushed down.</p>
+
+<p><strong>overlay_at_bottom</strong> | <code>bool</code> | If true, the overlay message will be at the bottom of the HUD log area. If false, it will be at the top.</p>
+
+<hr />
+
+<h4>MenuInventory</h4>
+
+<p>Description of menus/inventory.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>equipment_slot</strong> | <code>repeatable(int, int, string) : X, Y, Slot Type</code> | Position and item type of an equipment slot.</p>
+
+<p><strong>carried_area</strong> | <code>point</code> | Position of the first normal inventory slot.</p>
+
+<p><strong>carried_cols</strong> | <code>int</code> | The number of columns for the normal inventory.</p>
+
+<p><strong>carried_rows</strong> | <code>int</code> | The number of rows for the normal inventory.</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Inventory&rdquo; label.</p>
+
+<p><strong>currency</strong> | <code>label</code> | Position of the label that displays the total currency being carried.</p>
+
+<p><strong>help</strong> | <code>rectangle</code> | A mouse-over area that displays some help text for inventory shortcuts.</p>
+
+<hr />
+
+<h4>MenuLog</h4>
+
+<p>Description of menus/log.txt</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Log&rdquo; text.</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>tab_area</strong> | <code>rectangle</code> | The position of the row of tabs, followed by the dimensions of the log text area.</p>
+
+<hr />
+
+<h4>MenuMiniMap</h4>
+
+<p>Description of menus/minimap.txt</p>
+
+<p><strong>map_pos</strong> | <code>rectangle</code> | Position and dimensions of the map.</p>
+
+<p><strong>text_pos</strong> | <code>label</code> | Position of the text label with the map name.</p>
+
+<p><strong>background</strong> | <code>filename</code> | Optional background image.</p>
+
+<hr />
+
+<h4>MenuNumPicker</h4>
+
+<p>Description of menus/num_picker.txt</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Enter amount &rdquo; text.</p>
+
+<p><strong>confirm</strong> | <code>point</code> | Position of the &ldquo;OK&rdquo; button.</p>
+
+<p><strong>increase</strong> | <code>point</code> | Position of the button used to increase the value.</p>
+
+<p><strong>decrease</strong> | <code>point</code> | Position of the button used to decrease the value.</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the button used to close the number picker window.</p>
+
+<p><strong>input</strong> | <code>point</code> | Position of the text input box.</p>
+
+<hr />
+
+<h4>MenuPowers: Menu layout</h4>
+
+<p>Description of menus/powers.txt</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Powers&rdquo; text.</p>
+
+<p><strong>unspent_points</strong> | <code>label</code> | Position of the text that displays the amount of unused power points.</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>tab_area</strong> | <code>rectangle</code> | Position and dimensions of the tree pages.</p>
+
+<hr />
+
+<h4>MenuPowers: Power tree layout</h4>
+
+<p>Description of powers/trees/</p>
+
+<p><strong>background</strong> | <code>filename</code> | Filename of the default background image</p>
+
+<p><strong>tab.title</strong> | <code>string</code> | The name of this power tree tab</p>
+
+<p><strong>tab.background</strong> | <code>filename</code> | Filename of the background image for this tab&rsquo;s power tree</p>
+
+<p><strong>power.id</strong> | <code>int</code> | A power id from powers/powers.txt for this slot.</p>
+
+<p><strong>power.tab</strong> | <code>int</code> | Tab index to place this power on, starting from 0.</p>
+
+<p><strong>power.position</strong> | <code>point</code> | Position of this power icon; relative to MenuPowers &ldquo;pos&rdquo;.</p>
+
+<p><strong>power.requires_primary</strong> | <code>predefined_string, int : Primary stat name, Required value</code> | Power requires this primary stat to be at least the specificed value.</p>
+
+<p><strong>power.requires_point</strong> | <code>bool</code> | Power requires a power point to unlock.</p>
+
+<p><strong>power.requires_level</strong> | <code>int</code> | Power requires at least this level for the hero.</p>
+
+<p><strong>power.requires_power</strong> | <code>power_id</code> | Power requires another power id.</p>
+
+<p><strong>power.visible_requires_status</strong> | <code>repeatable(string)</code> | Hide the power if we don&rsquo;t have this campaign status.</p>
+
+<p><strong>power.visible_requires_not_status</strong> | <code>repeatable(string)</code> | Hide the power if we have this campaign status.</p>
+
+<p><strong>power.upgrades</strong> | <code>list(power_id)</code> | A list of upgrade power ids that this power slot can upgrade to. Each of these powers should have a matching upgrade section.</p>
+
+<p><strong>upgrade.id</strong> | <code>int</code> | A power id from powers/powers.txt for this upgrade.</p>
+
+<p><strong>upgrade.requires_primary</strong> | <code>predefined_string, int : Primary stat name, Required value</code> | Upgrade requires this primary stat to be at least the specificed value.</p>
+
+<p><strong>upgrade.requires_point</strong> | <code>bool</code> | Upgrade requires a power point to unlock.</p>
+
+<p><strong>upgrade.requires_level</strong> | <code>int</code> | Upgrade requires at least this level for the hero.</p>
+
+<p><strong>upgrade.requires_power</strong> | <code>int</code> | Upgrade requires another power id.</p>
+
+<p><strong>upgrade.visible_requires_status</strong> | <code>repeatable(string)</code> | Hide the upgrade if we don&rsquo;t have this campaign status.</p>
+
+<p><strong>upgrade.visible_requires_not_status</strong> | <code>repeatable(string)</code> | Hide the upgrade if we have this campaign status.</p>
+
+<hr />
+
+<h4>MenuStash</h4>
+
+<p>Description of menus/stash.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>slots_area</strong> | <code>point</code> | Position of the top-left slot.</p>
+
+<p><strong>stash_cols</strong> | <code>int</code> | The number of columns for the grid of slots.</p>
+
+<p><strong>stash_rows</strong> | <code>int</code> | The number of rows for the grid of slots.</p>
+
+<p><strong>label_title</strong> | <code>label</code> | Position of the &ldquo;Stash&rdquo; label.</p>
+
+<p><strong>currency</strong> | <code>label</code> | Position of the label displaying the amount of currency stored in the stash.</p>
+
+<hr />
+
+<h4>MenuStatBar</h4>
+
+<p>Description of menus/hp.txt, menus/mp.txt, menus/xp.txt</p>
+
+<p><strong>bar_pos</strong> | <code>rectangle</code> | Position and dimensions of the bar graphics.</p>
+
+<p><strong>text_pos</strong> | <code>label</code> | Position of the text displaying the current value of the relevant stat.</p>
+
+<p><strong>orientation</strong> | <code>bool</code> | True is vertical orientation; false is horizontal.</p>
+
+<p><strong>bar_gfx</strong> | <code>filename</code> | Filename of the image to use for the &ldquo;fill&rdquo; of the bar.</p>
+
+<p><strong>bar_gfx_background</strong> | <code>filename</code> | Filename of the image to use for the base of the bar.</p>
+
+<p><strong>hide_timeout</strong> | <code>duration</code> | Hide HP and MP bar if full mana or health, after given amount of seconds; Hide XP bar if no changes in XP points for given amount of seconds. 0 disable hiding.</p>
+
+<hr />
+
+<h4>MenuTalker</h4>
+
+<p>Description of menus/talker.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>advance</strong> | <code>point</code> | Position of the button to advance dialog.</p>
+
+<p><strong>dialogbox</strong> | <code>rectangle</code> | Position and dimensions of the text box graphics.</p>
+
+<p><strong>dialogtext</strong> | <code>rectangle</code> | Rectangle where the dialog text is placed.</p>
+
+<p><strong>text_offset</strong> | <code>point</code> | Margins for the left/right and top/bottom of the dialog text.</p>
+
+<p><strong>portrait_he</strong> | <code>rectangle</code> | Position and dimensions of the NPC portrait graphics.</p>
+
+<p><strong>portrait_you</strong> | <code>rectangle</code> | Position and dimensions of the player&rsquo;s portrait graphics.</p>
+
+<p><strong>font_who</strong> | <code>predefined_string</code> | Font style to use for the name of the currently talking person.</p>
+
+<p><strong>font_dialog</strong> | <code>predefined_string</code> | Font style to use for the dialog text.</p>
+
+<p><strong>topic_color_normal</strong> | <code>color</code> | The normal color for topic text.</p>
+
+<p><strong>topic_color_hover</strong> | <code>color</code> | The color for topic text when highlighted.</p>
+
+<p><strong>topic_color_normal</strong> | <code>color</code> | The color for topic text when clicked.</p>
+
+<p><strong>trade_color_normal</strong> | <code>color</code> | The normal color for the &ldquo;Trade&rdquo; text.</p>
+
+<p><strong>trade_color_hover</strong> | <code>color</code> | The color for the &ldquo;Trade&rdquo; text when highlighted.</p>
+
+<p><strong>trade_color_normal</strong> | <code>color</code> | The color for the &ldquo;Trade&rdquo; text when clicked.</p>
+
+<hr />
+
+<h4>MenuVendor</h4>
+
+<p>Description of menus/vendor.txt</p>
+
+<p><strong>close</strong> | <code>point</code> | Position of the close button.</p>
+
+<p><strong>slots_area</strong> | <code>point</code> | Position of the top-left slot.</p>
+
+<p><strong>vendor_cols</strong> | <code>int</code> | The number of columns in the grid of slots.</p>
+
+<p><strong>vendor_rows</strong> | <code>int</code> | The number of rows in the grid of slots.</p>
+
+<p><strong>label_title</strong> | <code>label</code> | The position of the text that displays the NPC&rsquo;s name.</p>
+
+<hr />
+
+<h4>ModManager</h4>
+
+<p>Description of mod settings.txt</p>
+
+<p><strong>description</strong> | <code>string</code> | Some text describing the mod.</p>
+
+<p><strong>description_locale</strong> | <code>string, string : Language, Translated description</code> | A translated description for a language (specified by 2-letter code).</p>
+
+<p><strong>version</strong> | <code>version</code> | The version number of this mod.</p>
+
+<p><strong>requires</strong> | <code>list(string)</code> | A comma-separated list of the mods that are required in order to use this mod. The dependency version requirements can also be specified and separated by colons (e.g. fantasycore 0.1 2.0).</p>
+
+<p><strong>game</strong> | <code>string</code> | The game which this mod belongs to (e.g. flare-game).</p>
+
+<p><strong>engine_version_min</strong> | <code>version</code> | The minimum engine version required to use this mod.</p>
+
+<p><strong>engine_version_max</strong> | <code>version</code> | The maximum engine version required to use this mod.</p>
+
+<hr />
+
+<h4>NPC</h4>
+
+<p>Description of NPCs in npcs/</p>
+
+<p><strong>dialog.id</strong> | <code>string</code> | A unique identifer used to reference this dialog.</p>
+
+<p><strong>dialog.him</strong> | <code>repeatable(string)</code> | A line of dialog from the NPC.</p>
+
+<p><strong>dialog.her</strong> | <code>repeatable(string)</code> | A line of dialog from the NPC.</p>
+
+<p><strong>dialog.you</strong> | <code>repeatable(string)</code> | A line of dialog from the player.</p>
+
+<p><strong>dialog.voice</strong> | <code>repeatable(string)</code> | Filename of a voice sound file to play.</p>
+
+<p><strong>dialog.topic</strong> | <code>string</code> | The name of this dialog topic. Displayed when picking a dialog tree.</p>
+
+<p><strong>dialog.group</strong> | <code>string</code> | Dialog group.</p>
+
+<p><strong>dialog.allow_movement</strong> | <code>bool</code> | Restrict the player&rsquo;s mvoement during dialog.</p>
+
+<p><strong>dialog.portrait_him</strong> | <code>repeatable(filename)</code> | Filename of a portrait to display for the NPC during this dialog.</p>
+
+<p><strong>dialog.portrait_her</strong> | <code>repeatable(filename)</code> | Filename of a portrait to display for the NPC during this dialog.</p>
+
+<p><strong>dialog.portrait_you</strong> | <code>repeatable(filename)</code> | Filename of a portrait to display for the player during this dialog.</p>
+
+<p><strong>dialog.response</strong> | <code>repeatable(string)</code> | A dialog ID to present as a selectable response. This key must precede the dialog text line.</p>
+
+<p><strong>dialog.response_only</strong> | <code>bool</code> | If true, this dialog topic will only appear when explicitly referenced with the &ldquo;response&rdquo; key.</p>
+
+<p><strong>name</strong> | <code>string</code> | NPC&rsquo;s name.</p>
+
+<p><strong>gfx</strong> | <code>filename</code> | Filename of an animation definition.</p>
+
+<p><strong>direction</strong> | <code>direction</code> | The direction to use for this NPC&rsquo;s stance animation.</p>
+
+<p><strong>talker</strong> | <code>bool</code> | Allows this NPC to be talked to.</p>
+
+<p><strong>portrait</strong> | <code>filename</code> | Filename of the default portrait image.</p>
+
+<p><strong>vendor</strong> | <code>bool</code> | Allows this NPC to buy/sell items.</p>
+
+<p><strong>vendor_requires_status</strong> | <code>list(string)</code> | The player must have these statuses in order to use this NPC as a vendor.</p>
+
+<p><strong>vendor_requires_not_status</strong> | <code>list(string)</code> | The player must not have these statuses in order to use this NPC as a vendor.</p>
+
+<p><strong>constant_stock</strong> | <code>repeatable(list(item_id))</code> | A list of items this vendor has for sale. Quantity can be specified by appending &ldquo; Q&rdquo; to the item_id, where Q is an integer.</p>
+
+<p><strong>status_stock</strong> | <code>repeatable(string, list(item_id)) : Required status, Item(s)</code> | A list of items this vendor will have for sale if the required status is met. Quantity can be specified by appending &ldquo; Q&rdquo; to the item_id, where Q is an integer.</p>
+
+<p><strong>random_stock</strong> | <code>list(loot)</code> | Use a loot table to add random items to the stock; either a filename or an inline definition.</p>
+
+<p><strong>random_stock_count</strong> | <code>int, int : Min, Max</code> | Sets the minimum (and optionally, the maximum) amount of random items this npc can have.</p>
+
+<p><strong>vox_intro</strong> | <code>repeatable(filename)</code> | Filename of a sound file to play when initially interacting with the NPC.</p>
+
+<hr />
+
+<h4>PowerManager: Effects</h4>
+
+<p>Description of powers/effects.txt</p>
+
+<p><strong>effect.id</strong> | <code>string</code> | Unique identifier for the effect definition.</p>
+
+<p><strong>effect.type</strong> | <code>string</code> | Defines the type of effect</p>
+
+<p><strong>effect.name</strong> | <code>string</code> | A displayed name that is shown when hovering the mouse over the effect icon.</p>
+
+<p><strong>effect.icon</strong> | <code>icon_id</code> | The icon to visually represent the effect in the status area</p>
+
+<p><strong>effect.animation</strong> | <code>filename</code> | The filename of effect animation.</p>
+
+<p><strong>effect.can_stack</strong> | <code>bool</code> | Allows multiple instances of this effect</p>
+
+<p><strong>effect.max_stacks</strong> | <code>int</code> | Maximum allowed instances of this effect, -1 for no limits</p>
+
+<p><strong>effect.group_stack</strong> | <code>bool</code> | For effects that can stack, setting this to true will combine those effects into a single status icon.</p>
+
+<p><strong>effect.render_above</strong> | <code>bool</code> | Effect is rendered above</p>
+
+<p><strong>effect.color_mod</strong> | <code>color</code> | Changes the color of the afflicted entity.</p>
+
+<p><strong>effect.alpha_mod</strong> | <code>int</code> | Changes the alpha of the afflicted entity.</p>
+
+<p><strong>effect.attack_speed_anim</strong> | <code>string</code> | If the type of Effect is attack_speed, this defines the attack animation that will have its speed changed.</p>
+
+<hr />
+
+<h4>PowerManager: Powers</h4>
+
+<p>Description of powers/powers.txt</p>
+
+<p><strong>power.id</strong> | <code>power_id</code> | Uniq identifier for the power definition.</p>
+
+<p><strong>power.type</strong> | <code>["fixed", "missile", "repeater", "spawn", "transform", "block"]</code> | Defines the type of power definiton</p>
+
+<p><strong>power.name</strong> | <code>string</code> | The name of the power</p>
+
+<p><strong>power.description</strong> | <code>string</code> | Description of the power</p>
+
+<p><strong>power.icon</strong> | <code>icon_id</code> | The icon to visually represent the power eg. in skill tree or action bar.</p>
+
+<p><strong>power.new_state</strong> | <code>predefined_string</code> | When power is used, hero or enemy will change to this state. Must be one of the states [&ldquo;instant&rdquo;, user defined]</p>
+
+<p><strong>power.state_duration</strong> | <code>duration</code> | Sets the length of time the caster is in their state animation. A time longer than the animation length will cause the animation to pause on the last frame. Times shorter than the state animation length will have no effect.</p>
+
+<p><strong>power.prevent_interrupt</strong> | <code>bool</code> | Prevents the caster from being interrupted by a hit when casting this power.</p>
+
+<p><strong>power.face</strong> | <code>bool</code> | Power will make hero or enemy to face the target location.</p>
+
+<p><strong>power.source_type</strong> | <code>["hero", "neutral", "enemy"]</code> | Determines which entities the power can effect.</p>
+
+<p><strong>power.beacon</strong> | <code>bool</code> | True if enemy is calling its allies.</p>
+
+<p><strong>power.count</strong> | <code>int</code> | The count of hazards/effect or spawns to be created by this power.</p>
+
+<p><strong>power.passive</strong> | <code>bool</code> | If power is unlocked when the hero or enemy spawns it will be automatically activated.</p>
+
+<p><strong>power.passive_trigger</strong> | <code>["on_block", "on_hit", "on_halfdeath", "on_joincombat", "on_death"]</code> | This will only activate a passive power under a certain condition.</p>
+
+<p><strong>power.meta_power</strong> | <code>bool</code> | If true, this power can not be used on it&rsquo;s own. Instead, it should be replaced via an item with a replace_power entry.</p>
+
+<p><strong>power.no_actionbar</strong> | <code>bool</code> | If true, this power is prevented from being placed on the actionbar.</p>
+
+<p><strong>power.requires_flags</strong> | <code>list(predefined_string)</code> | A comma separated list of equip flags that are required to use this power. See engine/equip_flags.txt</p>
+
+<p><strong>power.requires_mp</strong> | <code>int</code> | Restrict power usage to a specified MP level.</p>
+
+<p><strong>power.requires_hp</strong> | <code>int</code> | Restrict power usage to a specified HP level.</p>
+
+<p><strong>power.sacrifice</strong> | <code>bool</code> | If the power has requires_hp, allow it to kill the caster.</p>
+
+<p><strong>power.requires_los</strong> | <code>bool</code> | Requires a line-of-sight to target.</p>
+
+<p><strong>power.requires_empty_target</strong> | <code>bool</code> | The power can only be cast when target tile is empty.</p>
+
+<p><strong>power.requires_item</strong> | <code>repeatable(item_id, int) : Item, Quantity</code> | Requires a specific item of a specific quantity in inventory. If quantity &gt; 0, then the item will be removed.</p>
+
+<p><strong>power.requires_equipped_item</strong> | <code>repeatable(item_id, int) : Item, Quantity</code> | Requires a specific item of a specific quantity to be equipped on hero. If quantity &gt; 0, then the item will be removed.</p>
+
+<p><strong>power.requires_targeting</strong> | <code>bool</code> | Power is only used when targeting using click-to-target.</p>
+
+<p><strong>power.requires_spawns</strong> | <code>int</code> | The caster must have at least this many summoned creatures to use this power.</p>
+
+<p><strong>power.cooldown</strong> | <code>duration</code> | Specify the duration for cooldown of the power in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.requires_hpmp_state</strong> | <code>["all", "any"], ["percent", "not_percent", "ignore"], int , ["percent", "not_percent", "ignore"], int : Mode, HP state, HP Percentage value, MP state, MP Percentage value</code> | Power can only be used when HP/MP matches the specified state. In &lsquo;all&rsquo; mode, both HP and MP must meet the requirements, where as only one must in &lsquo;any&rsquo; mode. To check a single stat, use &lsquo;all&rsquo; mode and set the &lsquo;ignore&rsquo; state for the other stat.</p>
+
+<p><strong>power.animation</strong> | <code>filename</code> | The filename of the power animation.</p>
+
+<p><strong>power.soundfx</strong> | <code>filename</code> | Filename of a sound effect to play when the power is used.</p>
+
+<p><strong>power.soundfx_hit</strong> | <code>filename</code> | Filename of a sound effect to play when the power&rsquo;s hazard hits a valid target.</p>
+
+<p><strong>power.directional</strong> | <code>bool</code> | The animation sprite sheet contains 8 directions, one per row.</p>
+
+<p><strong>power.visual_random</strong> | <code>int</code> | The animation sprite sheet contains rows of random options</p>
+
+<p><strong>power.visual_option</strong> | <code>int</code> | The animation sprite sheet containers rows of similar effects, use a specific option. If using visual_random, this serves as an offset for the lowest random index.</p>
+
+<p><strong>power.aim_assist</strong> | <code>bool</code> | If true, power targeting will be offset vertically by the number of pixels set with &ldquo;aim_assist&rdquo; in engine/misc.txt.</p>
+
+<p><strong>power.speed</strong> | <code>float</code> | The speed of missile hazard, the unit is defined as map units per frame.</p>
+
+<p><strong>power.lifespan</strong> | <code>duration</code> | How long the hazard/animation lasts in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.floor</strong> | <code>bool</code> | The hazard is drawn between the background and the object layer.</p>
+
+<p><strong>power.complete_animation</strong> | <code>bool</code> | For hazards; Play the entire animation, even if the hazard has hit a target.</p>
+
+<p><strong>power.charge_speed</strong> | <code>float</code> | Moves the caster at this speed in the direction they are facing until the state animation is finished.</p>
+
+<p><strong>power.attack_speed</strong> | <code>int</code> | Changes attack animation speed for this Power. A value of 100 is 100% speed (aka normal speed).</p>
+
+<p><strong>power.use_hazard</strong> | <code>bool</code> | Power uses hazard.</p>
+
+<p><strong>power.no_attack</strong> | <code>bool</code> | Hazard won&rsquo;t affect other entities.</p>
+
+<p><strong>power.no_aggro</strong> | <code>bool</code> | If true, the Hazard won&rsquo;t put its target in a combat state.</p>
+
+<p><strong>power.radius</strong> | <code>float</code> | Radius in pixels</p>
+
+<p><strong>power.base_damage</strong> | <code>predefined_string : Damage type ID</code> | Determines which damage stat will be used to calculate damage.</p>
+
+<p><strong>power.starting_pos</strong> | <code>["source", "target", "melee"]</code> | Start position for hazard</p>
+
+<p><strong>power.relative_pos</strong> | <code>bool</code> | Hazard will move relative to the caster&rsquo;s position.</p>
+
+<p><strong>power.multitarget</strong> | <code>bool</code> | Allows a hazard power to hit more than one entity.</p>
+
+<p><strong>power.multihit</strong> | <code>bool</code> | Allows a hazard power to hit the same entity more than once.</p>
+
+<p><strong>power.expire_with_caster</strong> | <code>bool</code> | If true, hazard will disappear when the caster dies.</p>
+
+<p><strong>power.ignore_zero_damage</strong> | <code>bool</code> | If true, hazard can still hit the player when damage is 0, triggering post_power and post_effects.</p>
+
+<p><strong>power.lock_target_to_direction</strong> | <code>bool</code> | If true, the target is &ldquo;snapped&rdquo; to one of the 8 directions.</p>
+
+<p><strong>power.movement_type</strong> | <code>["ground", "flying", "intangible"]</code> | For moving hazards (missile/repeater), this defines which parts of the map it can collide with. The default is &ldquo;flying&rdquo;.</p>
+
+<p><strong>power.trait_armor_penetration</strong> | <code>bool</code> | Ignores the target&rsquo;s Absorbtion stat</p>
+
+<p><strong>power.trait_avoidance_ignore</strong> | <code>bool</code> | Ignores the target&rsquo;s Avoidance stat</p>
+
+<p><strong>power.trait_crits_impaired</strong> | <code>int</code> | Increases critical hit percentage for slowed/immobile targets</p>
+
+<p><strong>power.trait_elemental</strong> | <code>predefined_string</code> | Damage done is elemental. See engine/elements.txt</p>
+
+<p><strong>power.target_range</strong> | <code>float</code> | The distance from the caster that the power can be activated</p>
+
+<p><strong>power.hp_steal</strong> | <code>int</code> | Percentage of damage to steal into HP</p>
+
+<p><strong>power.mp_steal</strong> | <code>int</code> | Percentage of damage to steal into MP</p>
+
+<p><strong>power.missile_angle</strong> | <code>int</code> | Angle of missile</p>
+
+<p><strong>power.angle_variance</strong> | <code>int</code> | Percentage of variance added to missile angle</p>
+
+<p><strong>power.speed_variance</strong> | <code>float</code> | Percentage of variance added to missile speed</p>
+
+<p><strong>power.delay</strong> | <code>duration</code> | Delay between repeats in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.transform_duration</strong> | <code>duration</code> | Duration for transform in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.manual_untransform</strong> | <code>bool</code> | Force manual untranform</p>
+
+<p><strong>power.keep_equipment</strong> | <code>bool</code> | Keep equipment while transformed</p>
+
+<p><strong>power.untransform_on_hit</strong> | <code>bool</code> | Force untransform when the player is hit</p>
+
+<p><strong>power.buff</strong> | <code>bool</code> | Power is cast upon the caster.</p>
+
+<p><strong>power.buff_teleport</strong> | <code>bool</code> | Power is a teleportation power.</p>
+
+<p><strong>power.buff_party</strong> | <code>bool</code> | Power is cast upon party members</p>
+
+<p><strong>power.buff_party_power_id</strong> | <code>power_id</code> | Only party members that were spawned with this power ID are affected by &ldquo;buff_party=true&rdquo;. Setting this to 0 will affect all party members.</p>
+
+<p><strong>power.post_effect</strong> | <code>predefined_string, int, duration , int : Effect ID, Magnitude, Duration, Chance to apply</code> | Post effect to apply to target. Duration is in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.post_effect_src</strong> | <code>predefined_string, int, duration , int : Effect ID, Magnitude, Duration, Chance to apply</code> | Post effect to apply to caster. Duration is in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>power.pre_power</strong> | <code>power_id, int : Power, Chance to cast</code> | Trigger a power immediately when casting this one.</p>
+
+<p><strong>power.post_power</strong> | <code>power_id, int : Power, Chance to cast</code> | Trigger a power if the hazard did damage.</p>
+
+<p><strong>power.wall_power</strong> | <code>power_id, int : Power, Chance to cast</code> | Trigger a power if the hazard hit a wall.</p>
+
+<p><strong>power.wall_reflect</strong> | <code>bool</code> | Moving power will bounce off walls and keep going</p>
+
+<p><strong>power.spawn_type</strong> | <code>predefined_string</code> | For non-transform powers, an enemy is spawned from this category. For transform powers, the caster will transform into a creature from this category.</p>
+
+<p><strong>power.target_neighbor</strong> | <code>int</code> | Target is changed to an adjacent tile within a radius.</p>
+
+<p><strong>power.spawn_limit</strong> | <code>["fixed", "stat", "unlimited"], [int, predefined_string] : Mode, Value</code> | The maximum number of creatures that can be spawned and alive from this power. &ldquo;fixed&rdquo; takes an integer. &ldquo;stat&rdquo; takes a primary stat as a string (e.g. &ldquo;physical&rdquo;).</p>
+
+<p><strong>power.spawn_level</strong> | <code>["default", "fixed", "stat", "level"], [int, predefined_string] : Mode, Value</code> | The level of spawned creatures. &ldquo;fixed&rdquo; and &ldquo;level&rdquo; take an integer. &ldquo;stat&rdquo; takes a primary stat as a string (e.g. &ldquo;physical&rdquo;).</p>
+
+<p><strong>power.target_party</strong> | <code>bool</code> | Hazard will only affect party members.</p>
+
+<p><strong>power.target_categories</strong> | <code>list(predefined_string)</code> | Hazard will only affect enemies in these categories.</p>
+
+<p><strong>power.modifier_accuracy</strong> | <code>["multiply", "add", "absolute"], int : Mode, Value</code> | Changes this power&rsquo;s accuracy.</p>
+
+<p><strong>power.modifier_damage</strong> | <code>["multiply", "add", "absolute"], int, int : Mode, Min, Max</code> | Changes this power&rsquo;s damage. The &ldquo;Max&rdquo; value is ignored, except in the case of &ldquo;absolute&rdquo; modifiers.</p>
+
+<p><strong>power.modifier_critical</strong> | <code>["multiply", "add", "absolute"], int : Mode, Value</code> | Changes the chance that this power will land a critical hit.</p>
+
+<p><strong>power.target_movement_normal</strong> | <code>bool</code> | Power can affect entities with normal movement (aka walking on ground)</p>
+
+<p><strong>power.target_movement_flying</strong> | <code>bool</code> | Power can affect flying entities</p>
+
+<p><strong>power.target_movement_intangible</strong> | <code>bool</code> | Power can affect intangible entities</p>
+
+<p><strong>power.walls_block_aoe</strong> | <code>bool</code> | When true, prevents hazard aoe from hitting targets that are behind walls/pits.</p>
+
+<p><strong>power.script</strong> | <code>["on_cast", "on_hit", "on_wall"], filename : Trigger, Filename</code> | Loads and executes a script file when the trigger is activated.</p>
+
+<p><strong>power.remove_effect</strong> | <code>repeatable(predefined_string, int) : Effect ID, Number of Effect instances</code> | Removes a number of instances of a specific Effect ID. Omitting the number of instances, or setting it to zero, will remove all instances/stacks.</p>
+
+<p><strong>power.replace_by_effect</strong> | <code>repeatable(int, predefined_string, int) : Power ID, Effect ID, Number of Effect instances</code> | If the caster has at least the number of instances of the Effect ID, the defined Power ID will be cast instead.</p>
+
+<p><strong>power.requires_corpse</strong> | <code>["consume", bool]</code> | If true, a corpse must be targeted for this power to be used. If &ldquo;consume&rdquo;, then the corpse is also consumed on Power use.</p>
+
+<p><strong>power.target_nearest</strong> | <code>float</code> | Will automatically target the nearest enemy within the specified range.</p>
+
+<hr />
+
+<h4>QuestLog</h4>
+
+<p>Description of quest files in quests/</p>
+
+<p><strong>name</strong> | <code>string</code> | A displayed name for this quest.</p>
+
+<p><strong>complete_status</strong> | <code>string</code> | If this status is set, the quest will be displayed as completed.</p>
+
+<p><strong>quest.requires_status</strong> | <code>list(string)</code> | Quest requires this campaign status</p>
+
+<p><strong>quest.requires_not_status</strong> | <code>list(string)</code> | Quest requires not having this campaign status.</p>
+
+<p><strong>quest.requires_level</strong> | <code>int</code> | Quest requires hero level</p>
+
+<p><strong>quest.requires_not_level</strong> | <code>int</code> | Quest requires not hero level</p>
+
+<p><strong>quest.requires_currency</strong> | <code>int</code> | Quest requires atleast this much currency</p>
+
+<p><strong>quest.requires_not_currency</strong> | <code>int</code> | Quest requires no more than this much currency</p>
+
+<p><strong>quest.requires_item</strong> | <code>list(item_id)</code> | Quest requires specific item (not equipped)</p>
+
+<p><strong>quest.requires_not_item</strong> | <code>list(item_id)</code> | Quest requires not having a specific item (not equipped)</p>
+
+<p><strong>quest.requires_class</strong> | <code>predefined_string</code> | Quest requires this base class</p>
+
+<p><strong>quest.requires_not_class</strong> | <code>predefined_string</code> | Quest requires not this base class</p>
+
+<p><strong>quest.quest_text</strong> | <code>string</code> | Text that gets displayed in the Quest log when this quest is active.</p>
+
+<hr />
+
+<h4>SDLFontEngine: Font settings</h4>
+
+<p>Description of engine/font_settings.txt</p>
+
+<p><strong>font.id</strong> | <code>string</code> | An identifier used to reference this font.</p>
+
+<p><strong>font.style</strong> | <code>repeatable(["default", predefined_string], filename, int, bool) : Language, Font file, Point size, Blending</code> | Filename, point size, and blend mode of the font to use for this language. Language can be &ldquo;default&rdquo; or a 2-letter region code.</p>
+
+<hr />
+
+<h4>StatBlock: Core stats</h4>
+
+<p>Description of engine/stats.txt and enemies in enemies/</p>
+
+<p><strong>speed</strong> | <code>float</code> | Movement speed</p>
+
+<p><strong>cooldown</strong> | <code>int</code> | Cooldown between attacks in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>cooldown_hit</strong> | <code>duration</code> | Duration of cooldown after being hit in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>stat</strong> | <code>string, int : Stat name, Value</code> | The starting value for this stat.</p>
+
+<p><strong>stat_per_level</strong> | <code>predefined_string, int : Stat name, Value</code> | The value for this stat added per level.</p>
+
+<p><strong>stat_per_primary</strong> | <code>predefined_string, predefined_string, int : Primary Stat, Stat name, Value</code> | The value for this stat added for every point allocated to this primary stat.</p>
+
+<p><strong>vulnerable</strong> | <code>predefined_string, int : Element, Value</code> | Percentage weakness to this element.</p>
+
+<p><strong>power_filter</strong> | <code>list(power_id)</code> | Only these powers are allowed to hit this entity.</p>
+
+<hr />
+
+<h4>StatBlock: Sound effects</h4>
+
+<p>Description of heroes in engine/avatar/ and enemies in enemies/</p>
+
+<p><strong>sfx_attack</strong> | <code>repeatable(predefined_string, filename) : Animation name, Sound file</code> | Filename of sound effect for the specified attack animation.</p>
+
+<p><strong>sfx_hit</strong> | <code>repeatable(filename)</code> | Filename of sound effect for being hit.</p>
+
+<p><strong>sfx_die</strong> | <code>repeatable(filename)</code> | Filename of sound effect for dying.</p>
+
+<p><strong>sfx_critdie</strong> | <code>repeatable(filename)</code> | Filename of sound effect for dying to a critical hit.</p>
+
+<p><strong>sfx_block</strong> | <code>repeatable(filename)</code> | Filename of sound effect for blocking an incoming hit.</p>
+
+<p><strong>sfx_levelup</strong> | <code>filename</code> | Filename of sound effect for leveling up.</p>
+
+<p><strong>sfx_lowhp</strong> | <code>filename, bool : Sound file, loop</code> | Filename of sound effect for low health warning. Optionally, it can be looped.</p>
+
+<hr />
+
+<h4>StatBlock: Enemies</h4>
+
+<p>Description of enemies in enemies/</p>
+
+<p><strong>name</strong> | <code>string</code> | Name</p>
+
+<p><strong>humanoid</strong> | <code>bool</code> | This creature gives human traits when transformed into, such as the ability to talk with NPCs.</p>
+
+<p><strong>lifeform</strong> | <code>bool</code> | Determines whether or not this entity is referred to as a living thing, such as displaying &ldquo;Dead&rdquo; vs &ldquo;Destroyed&rdquo; when their HP is 0.</p>
+
+<p><strong>level</strong> | <code>int</code> | Level</p>
+
+<p><strong>xp</strong> | <code>int</code> | XP awarded upon death.</p>
+
+<p><strong>loot</strong> | <code>repeatable(loot)</code> | Possible loot that can be dropped on death.</p>
+
+<p><strong>loot_count</strong> | <code>int, int : Min, Max</code> | Sets the minimum (and optionally, the maximum) amount of loot this creature can drop. Overrides the global drop_max setting.</p>
+
+<p><strong>defeat_status</strong> | <code>string</code> | Campaign status to set upon death.</p>
+
+<p><strong>convert_status</strong> | <code>string</code> | Campaign status to set upon being converted to a player ally.</p>
+
+<p><strong>first_defeat_loot</strong> | <code>item_id</code> | Drops this item upon first death.</p>
+
+<p><strong>quest_loot</strong> | <code>string, string, item_id : Required status, Required not status, Item</code> | Drops this item when campaign status is met.</p>
+
+<p><strong>flying</strong> | <code>bool</code> | Creature can move over gaps/water.</p>
+
+<p><strong>intangible</strong> | <code>bool</code> | Creature can move through walls.</p>
+
+<p><strong>facing</strong> | <code>bool</code> | Creature can turn to face their target.</p>
+
+<p><strong>waypoint_pause</strong> | <code>duration</code> | Duration to wait at each waypoint in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>turn_delay</strong> | <code>duration</code> | Duration it takes for this creature to turn and face their target in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<p><strong>chance_pursue</strong> | <code>int</code> | Percentage change that the creature will chase their target.</p>
+
+<p><strong>chance_flee</strong> | <code>int</code> | Percentage chance that the creature will run away from their target.</p>
+
+<p><strong>power</strong> | <code>["melee", "ranged", "beacon", "on_hit", "on_death", "on_half_dead", "on_join_combat", "on_debuff"], power_id, int : State, Power, Chance</code> | A power that has a chance of being triggered in a certain state.</p>
+
+<p><strong>passive_powers</strong> | <code>list(power_id)</code> | A list of passive powers this creature has.</p>
+
+<p><strong>melee_range</strong> | <code>float</code> | Minimum distance from target required to use melee powers.</p>
+
+<p><strong>threat_range</strong> | <code>float, float : Engage distance, Stop distance</code> | The first value is the radius of the area this creature will be able to start chasing the hero. The second, optional, value is the radius at which this creature will stop pursuing their target and defaults to double the first value.</p>
+
+<p><strong>flee_range</strong> | <code>float</code> | The radius at which this creature will start moving to a safe distance. Defaults to half of the threat_range.</p>
+
+<p><strong>combat_style</strong> | <code>["default", "aggressive", "passive"]</code> | How the creature will enter combat. Default is within range of the hero; Aggressive is always in combat; Passive must be attacked to enter combat.</p>
+
+<p><strong>animations</strong> | <code>filename</code> | Filename of an animation definition.</p>
+
+<p><strong>suppress_hp</strong> | <code>bool</code> | Hides the enemy HP bar for this creature.</p>
+
+<p><strong>categories</strong> | <code>list(string)</code> | Categories that this enemy belongs to.</p>
+
+<p><strong>flee_duration</strong> | <code>duration</code> | The minimum amount of time that this creature will flee. They may flee longer than the specified time.</p>
+
+<p><strong>flee_cooldown</strong> | <code>duration</code> | The amount of time this creature must wait before they can start fleeing again.</p>
+
+<hr />
+
+<h4>StatBlock: Hero stats</h4>
+
+<p>Description of engine/stats.txt</p>
+
+<p><strong>max_points_per_stat</strong> | <code>int</code> | Maximum points for each primary stat.</p>
+
+<p><strong>sfx_step</strong> | <code>string</code> | An id for a set of step sound effects. See items/step_sounds.txt.</p>
+
+<p><strong>stat_points_per_level</strong> | <code>int</code> | The amount of stat points awarded each level.</p>
+
+<p><strong>power_points_per_level</strong> | <code>int</code> | The amount of power points awarded each level.</p>
+
+<hr />
+
+<h4>Subtitles</h4>
+
+<p>Description of soundfx/subtitles.txt</p>
+
+<p><strong>style.text_pos</strong> | <code>label</code> | Position and style of the subtitle text.</p>
+
+<p><strong>style.pos</strong> | <code>point</code> | Position of the subtitle text relative to alignment.</p>
+
+<p><strong>style.align</strong> | <code>alignment</code> | Alignment of the subtitle text.</p>
+
+<p><strong>style.background_color</strong> | <code>color, int : Color, Alpha</code> | Color and alpha of the subtitle background rectangle.</p>
+
+<p><strong>subtitle.id</strong> | <code>filename</code> | Filename of the sound file that will trigger this subtitle.</p>
+
+<p><strong>subtitle.text</strong> | <code>string</code> | The subtitle text that will be displayed.</p>
+
+<hr />
+
+<h4>TileSet</h4>
+
+<p>Description of tilesets in tilesets/</p>
+
+<p><strong>tileset.img</strong> | <code>filename</code> | Filename of a tile sheet image.</p>
+
+<p><strong>tileset.tile</strong> | <code>int, int, int, int, int, int, int : Index, X, Y, Width, Height, X offset, Y offset</code> | A single tile definition.</p>
+
+<p><strong>tileset.animation</strong> | <code>list(int, int, int, duration) : Tile index, X, Y, duration</code> | An animation for a tile. Durations are in &lsquo;ms&rsquo; or &rsquo;s'.</p>
+
+<hr />
+
+<h3>Predefined Strings</h3>
+
+<p>Below are some strings that are used in various attributes.</p>
+
+<hr />
+
+<h4>EffectManager</h4>
+
+<p>Description of &ldquo;type&rdquo; in powers/effects.txt</p>
+
+<p><strong>death_sentence</strong> | Causes sudden death at the end of the effect duration.</p>
+
+<p><strong>damage</strong> | Damage per second</p>
+
+<p><strong>damage_percent</strong> | Damage per second (percentage of max HP)</p>
+
+<p><strong>hpot</strong> | HP restored per second</p>
+
+<p><strong>hpot_percent</strong> | HP restored per second (percentage of max HP)</p>
+
+<p><strong>mpot</strong> | MP restored per second</p>
+
+<p><strong>mpot_percent</strong> | MP restored per second (percentage of max MP)</p>
+
+<p><strong>speed</strong> | Changes movement speed. A magnitude of 100 is 100% speed (aka normal speed).</p>
+
+<p><strong>attack_speed</strong> | Changes attack speed. A magnitude of 100 is 100% speed (aka normal speed).</p>
+
+<p><strong>immunity</strong> | Applies all immunity effects. Magnitude is ignored.</p>
+
+<p><strong>immunity_damage</strong> | Removes and prevents damage over time. Magnitude is ignored.</p>
+
+<p><strong>immunity_slow</strong> | Removes and prevents slow effects. Magnitude is ignored.</p>
+
+<p><strong>immunity_stun</strong> | Removes and prevents stun effects. Magnitude is ignored.</p>
+
+<p><strong>immunity_hp_steal</strong> | Prevents HP stealing. Magnitude is ignored.</p>
+
+<p><strong>immunity_mp_steal</strong> | Prevents MP stealing. Magnitude is ignored.</p>
+
+<p><strong>immunity_knockback</strong> | Removes and prevents knockback effects. Magnitude is ignored.</p>
+
+<p><strong>immunity_damage_reflect</strong> | Prevents damage reflection. Magnitude is ignored.</p>
+
+<p><strong>immunity_stat_debuff</strong> | Prevents stat value altering effects that have a magnitude less than 0. Magnitude is ignored.</p>
+
+<p><strong>stun</strong> | Can&rsquo;t move or attack. Being attacked breaks stun.</p>
+
+<p><strong>revive</strong> | Revives the player. Typically attached to a power that triggers when the player dies.</p>
+
+<p><strong>convert</strong> | Causes an enemy or an ally to switch allegiance</p>
+
+<p><strong>fear</strong> | Causes enemies to run away</p>
+
+<p><strong>knockback</strong> | Pushes the target away from the source caster. Speed is the given value divided by the framerate cap.</p>
+
+<p><strong>${STATNAME}</strong> | Increases ${STATNAME}, where ${STATNAME} is any of the base stats. Examples: hp, avoidance, xp_gain</p>
+
+<p><strong>${DAMAGE_TYPE}</strong> | Increases a damage min or max, where ${DAMAGE_TYPE} is any &lsquo;min&rsquo; or &lsquo;max&rsquo; value found in engine/damage_types.txt. Example: dmg_melee_min</p>
+
+<p><strong>${ELEMENT}_resist</strong> | Increase Resistance % to ${ELEMENT}, where ${ELEMENT} is any found in engine/elements.txt. Example: fire_resist</p>
+
+<p><strong>${PRIMARYSTAT}</strong> | Increases ${PRIMARYSTAT}, where ${PRIMARYSTAT} is any of the primary stats defined in engine/primary_stats.txt. Example: physical</p>
+
+<p><strong>shield</strong> | Create a damage absorbing barrier based on Mental damage stat. Duration is ignored.</p>
+
+<p><strong>heal</strong> | Restore HP based on Mental damage stat.</p>
+
+<hr />
+
+<h4>Stats</h4>
+
+<p>Description of the base stats, aka &ldquo;stat name&rdquo; or ${STATNAME}</p>
+
+<p><strong>hp</strong> | Hit points</p>
+
+<p><strong>hp_regen</strong> | HP restored per minute</p>
+
+<p><strong>mp</strong> | Magic points</p>
+
+<p><strong>mp_regen</strong> | MP restored per minute</p>
+
+<p><strong>accuracy</strong> | Accuracy %. Higher values mean less likely to miss.</p>
+
+<p><strong>avoidance</strong> | Avoidance %. Higher values means more likely to not get hit.</p>
+
+<p><strong>absorb_min</strong> | Minimum damage absorption</p>
+
+<p><strong>absorb_max</strong> | Maximum damage absorption</p>
+
+<p><strong>crit</strong> | Critical hit chance %</p>
+
+<p><strong>xp_gain</strong> | Percentage boost to the amount of experience points gained per kill.</p>
+
+<p><strong>currency_find</strong> | Percentage boost to the amount of gold dropped per loot event.</p>
+
+<p><strong>item_find</strong> | Increases the chance of finding items in loot.</p>
+
+<p><strong>stealth</strong> | Decrease the distance required to alert enemies by %</p>
+
+<p><strong>poise</strong> | Reduced % chance of entering &ldquo;hit&rdquo; animation when damaged</p>
+
+<p><strong>reflect_chance</strong> | Percentage chance to reflect missiles</p>
+
+<p><strong>return_damage</strong> | Deals a percentage of the damage taken back to the attacker</p>
+
+<p><strong>hp_steal</strong> | Percentage of HP stolen when damaging a target</p>
+
+<p><strong>mp_steal</strong> | Percentage of MP stolen when damaging a target</p>
+
+<p><strong>hp_percent</strong> | Base HP altered by percentage</p>
+
+<p><strong>mp_percent</strong> | Base MP altered by percentage</p>
+
+</div>
+
+<div class="footer">
+<hr/>
+<p>
+<a href="http://flarerpg.org/">FLARE Website</a>
+</p>
+</div>
+
+</body>
+
+</html>
