@@ -1,93 +1,95 @@
 # Flare
 
-Flare (Free Libre Action Roleplaying Engine) is a simple game engine
-built to handle a very specific kind of game: single-player 2D action RPGs.
-Flare is not a reimplementation of an existing game or engine.
-It is a tribute to and exploration of the action RPG genre.
+Flare is a single-player 2D action RPG with fast-paced action and a dark fantasy style.
 
-Rather than building a very abstract, robust game engine,
-the goal of this project is to build several real games
-and harvest an engine from the common, reusable code.
+It is built on the FLARE engine (Free/Libre Action Roleplaying Engine). Its repo is at https://github.com/flareteam/flare-engine
 
-The Flare engine, which is purely a runtime, is written in C++.
+Flare uses simple file formats (INI style config files) for most of the game data, allowing anyone to easily modify game contents. Open formats are preferred (png, ogg). Maps are edited using Tiled.
 
-Flare uses simple file formats (INI-style config files) for most of the game data,
-allowing anyone to easily modify game contents. Open formats are preferred (png, ogg).
-For creating maps, we also support [Tiled](http://www.mapeditor.org/) with the Flare plugin.
+For best results, please use the latest version of the FLARE engine with the game data in this repository. Using an older version of the engine could result in some game elements not working correctly.
 
-Originally the first game to be developed using this engine was part of this
-repository. As the engine became mature, the game content was moved to an
-extra repository and is now called [flare-game]. (happened around sept. 2012)
+![Flare screenshot](distribution/screenshot1.jpg)
 
-[flare-game]: https://github.com/flareteam/flare-game
+The flare-game content contains depictions of violence, blood, and mild gore.
 
 ## Copyright and License
 
-Most of Flare is Copyright © 2010-2013 Clint Bellanger.
-Contributors retain copyrights to their original contributions.
+Flare (the game) is Copyright ©2010-2013 Clint Bellanger. Contributors retain copyrights to their original contributions.
 
-Flare's source code is released under the GNU GPL v3. Later versions are permitted.
+The Flare Engine is released under GPL version 3 or later.
 
-Flare's default mod (includes engine translations) is released under GNU GPL v3 and CC-BY-SA 3.0.
-Later versions are permitted.
+All of Flare's art and data files are released under CC-BY-SA 3.0. Later versions are permitted.
 
-The default mod contains the Liberation Sans font which is released under the SIL Open Font License, Version 1.1.
+The Liberation Sans fonts version 2 are released under the SIL Open Font License, Version 1.1.
 
 The GNU Unifont font is released under GPL v2, with the exception that embedding the font in a document does not in itself bind that document to the terms of the GPL.
 
 
 ## Links
 
-The following links are specific to the engine
-
-* [Homepage](http://flarerpg.org)
-* [Source](https://github.com/flareteam/flare-engine)
-* [Forums](http://opengameart.org/forums/flare)
+* Homepage  http://flarerpg.org
+* Repo      https://github.com/flareteam/flare-game
+* Binaries  https://sourceforge.net/projects/flare-game/
+* Forums    http://opengameart.org/forums/flare
 * Email     clintbellanger@gmail.com
 
-## Games made with flare
+## The Simplest Setup
 
-* [flare-game]    A medival fantasy game. In the first days of the engine this game influenced most design decisions a lot. The art is 3d rendered 64x32 px isometric perspective.
-* [polymorphable] A game made for "The Liberated Pixel cup", which was a competition about game art and making a game thereof. The pixel art is 32x32 orthogonal perspective featuring a medival setting. The development has finished.
-* [concordia]     Another game using the art created during "The liberated pixel cup". While this started without stress regarding the timeline for the pixel cup, this story is more thought through and the content is more organized.
+If you are building and running Flare Game from source, this is the simplest way to get started on all operating systems. Here you build and play Flare in a local folder instead of installing it to a standard OS folder (e.g. /usr/local or Program Files).
 
-[flare-game]: https://github.com/flareteam/flare-game
-[polymorphable]: https://github.com/makrohn/polymorphable
-[concordia]: https://github.com/makrohn/concordia
+* Clone the flare-engine repo and build the executable.
+* Clone the flare-game repo into your user directory.
+* Copy the flare-engine "default" mod into the flare-game mods folder.
+* Put the flare executable inside the flare-game folder
+* The executable and the "mods" folder should be in the same directory
+* Run Flare
 
-## Building from Source
+## Running on Switch
 
-Flare uses SDL2, SDL2\_image, SDL2\_mixer, and SDL2\_ttf. Please see the [INSTALL.md](INSTALL.engine.md) file for instructions.
+See the Flare-Engine repo for instructions on how to install Flare:
+
+https://github.com/Riviera71/flare-engine
+
+The mods folder should be in the same directory as the flare executable when building from source.
+
+Flare Game is installed as a set of mods for Flare Engine. Place the contents of the "mods" folder inside Flare Engine's mods folder.
+
+Then enable these mods in Flare's Configuration screen.
+
+    fantasycore
+    empyrean_campaign
+
 
 ## Settings
 
-Settings are stored in one of these places:
+Settings are stored in this place:
 
-### Linux/Mac OS X/Unix
-    $XDG_CONFIG_HOME/flare/
-    $HOME/.config/flare/
-    ./config
-### Windows
-	%APPDATA%\flare\config
-	config\
+    /switch/flare/config/
 
-Here you can enable fullscreen, change the game resolution, enable mouse-move, and change keybindings.
-The settings files are created the first time you run Flare.
+Here you can enable fullscreen, change the game resolution, enable mouse-move, and change keybindings. The settings files are created the first time you run Flare.
 
 ## Save Files
 
-Save files are stored in one of these places:
+Save files are stored in this place:
 
-### Linux/Mac OS X/Unix
-    $XDG_DATA_HOME/flare/
-    $HOME/.local/share/flare/
-    ./userdata
-### Windows
-	%APPDATA%\flare\userdata
-	userdata\
+    /switch/flare/saves
 
 If permissions are correct, the game is automatically saved when you exit.
-In addition, there is a `mods` directory in this location, which can be used to override system-wide mods.
+
+### Building for Switch
+
+Clone the repos:
+
+	git clone https://github.com/Riviera71/flare-engine
+	
+
+Move to the flare-engine repo and build:
+For instructions more in detail see the INSTALL file in the
+flare-engine repo.
+
+	cd flare-engine
+	make -f Makefile.NX
+
 
 ## Command-line Flags
 
