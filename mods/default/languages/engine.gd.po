@@ -1,0 +1,1863 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Justin Jacobs <jajdorkster@gmail.com>, 2018
+# GunChleoc, 2019
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-21 14:40-0400\n"
+"PO-Revision-Date: 2018-03-28 19:16+0000\n"
+"Last-Translator: GunChleoc, 2019\n"
+"Language-Team: Gaelic, Scottish (https://www.transifex.com/flareorg/teams/84925/gd/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gd\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n > 2 && n < 20) ? 2 : 3;\n"
+
+#: ../../../src/Avatar.cpp:387
+msgid "Your health is low!"
+msgstr "Tha droch-shlàinte ort!"
+
+#: ../../../src/Avatar.cpp:419
+#, c-format
+msgid "Congratulations, you have reached level %d!"
+msgstr "Meal do naidheachd, ràinig thu leibheil %d!"
+
+#: ../../../src/Avatar.cpp:421
+msgid "You may increase one or more attributes through the Character Menu."
+msgstr "Faodaidh tu buadh no dhà àrdachadh air clàr-taice a’ phearsa."
+
+#: ../../../src/Avatar.cpp:425
+msgid "You may unlock one or more abilities through the Powers Menu."
+msgstr ""
+"Faodaidh tu a’ ghlas a thoirt far comas no dhà air clàr-taice nan "
+"cumhachdan."
+
+#: ../../../src/Avatar.cpp:688
+msgid "You are defeated. Game over! ${INPUT_CONTINUE} to exit to Title."
+msgstr ""
+"Chaidh do ruaig. Crìoch a’ gheama! ${INPUT_CONTINUE} gus fàgail gun tiotal."
+
+#: ../../../src/Avatar.cpp:694
+msgid "You are defeated. ${INPUT_CONTINUE} to continue."
+msgstr "Chaidh do ruaig. ${INPUT_CONTINUE} gus leantainn air adhart."
+
+#: ../../../src/Avatar.cpp:944
+msgid "Transformation expired. You have been moved back to a safe place."
+msgstr ""
+"Dh’fhalbh an ùine air a’ chruth-atharrachadh. Chaidh do ghluasad air ais gu "
+"ionad sàbhailte."
+
+#: ../../../src/CampaignManager.cpp:153
+#, c-format
+msgid "%d %s removed."
+msgstr "Chaidh %d %s a thoirt air falbh."
+
+#: ../../../src/CampaignManager.cpp:162
+#, c-format
+msgid "%s removed."
+msgstr "Chaidh %s a thoirt air falbh."
+
+#: ../../../src/CampaignManager.cpp:175
+#, c-format
+msgid "You receive %s."
+msgstr "Fhuair thu %s."
+
+#: ../../../src/CampaignManager.cpp:177
+#, c-format
+msgid "You receive %s x%d."
+msgstr "Fhuair thu %s x%d."
+
+#: ../../../src/CampaignManager.cpp:186
+#, c-format
+msgid "You receive %d %s."
+msgstr "Fhuair thu %d %s."
+
+#: ../../../src/CampaignManager.cpp:195
+#, c-format
+msgid "You receive %d XP."
+msgstr "Fhuair thu %d puing-eòlais."
+
+#: ../../../src/CampaignManager.cpp:201
+msgid "HP restored."
+msgstr "Chaidh puingean-beatha a leigheas."
+
+#: ../../../src/CampaignManager.cpp:205
+msgid "MP restored."
+msgstr "Chaidh puingean-gluasaid a leigheas."
+
+#: ../../../src/CampaignManager.cpp:210
+msgid "HP and MP restored."
+msgstr "Chaidh puingean-beatha is puingean-gluasaid a leigheas."
+
+#: ../../../src/CampaignManager.cpp:214
+msgid "Negative effects removed."
+msgstr "Chaidh èifeachdan dona a thoirt air falbh."
+
+#: ../../../src/CampaignManager.cpp:220
+msgid "HP and MP restored, negative effects removed"
+msgstr ""
+"Chaidh puingean-beatha is puingean-gluasaid a leigheas is èifeachdan dona a "
+"thoirt air falbh."
+
+#: ../../../src/DeviceList.cpp:56
+msgid ""
+"SDL software renderer\n"
+"\n"
+"Often slower, but less likely to have issues."
+msgstr ""
+"Inneal-reandaraidh bathair-bhog SDL\n"
+"\n"
+"Nas slaodaiche mar as trice ach chan ann cho buailteach air duilgheadasan."
+
+#: ../../../src/DeviceList.cpp:59
+msgid ""
+"SDL hardware renderer\n"
+"\n"
+"The default renderer that is often faster than the SDL software renderer."
+msgstr ""
+"Inneal-reandaraidh bathair-chruaidh SDL\n"
+"\n"
+"An t-inneal-reandaraidh tùsail a bhios nas luaithe mar as trice na an t-inneal-reandaraidh bathair-bhog SDL."
+
+#: ../../../src/EngineSettings.cpp:561
+msgid "Adventurer"
+msgstr "Baoghlair"
+
+#: ../../../src/Entity.cpp:517
+msgid "miss"
+msgstr "mì-amais"
+
+#: ../../../src/Entity.cpp:554 ../../../src/PowerManager.cpp:1186
+#: ../../../src/StatBlock.cpp:812 ../../../src/StatBlock.cpp:818
+#, c-format
+msgid "+%d HP"
+msgstr "+%d puingean-beatha"
+
+#: ../../../src/Entity.cpp:561 ../../../src/StatBlock.cpp:823
+#: ../../../src/StatBlock.cpp:829
+#, c-format
+msgid "+%d MP"
+msgstr "+%d puingean-gluasaid"
+
+#: ../../../src/EventManager.cpp:738
+msgid "Unknown destination"
+msgstr "Ceann-uidhe neo-aithnichte"
+
+#: ../../../src/GameState.cpp:37 ../../../src/GameState.cpp:58
+msgid "Loading..."
+msgstr "’Ga luchdadh…"
+
+#: ../../../src/GameStateLoad.cpp:88 ../../../src/GameStateLoad.cpp:101
+msgid "Delete Save"
+msgstr "Sguab às"
+
+#: ../../../src/GameStateLoad.cpp:88
+msgid "Delete this save?"
+msgstr "An sguab sinn an geama às?"
+
+#: ../../../src/GameStateLoad.cpp:90
+msgid "Exit to Title"
+msgstr "Fàg gun tiotal"
+
+#: ../../../src/GameStateLoad.cpp:93
+msgid "New Game"
+msgstr "Geama ùr"
+
+#: ../../../src/GameStateLoad.cpp:97 ../../../src/GameStateLoad.cpp:600
+msgid "Choose a Slot"
+msgstr "Tagh slot"
+
+#: ../../../src/GameStateLoad.cpp:573 ../../../src/GameStateLoad.cpp:594
+msgid "Enable a story mod to continue"
+msgstr "Cuir tuilleadan sgeulachd an comas gus leantainn air adhart"
+
+#: ../../../src/GameStateLoad.cpp:589
+msgid "Load Game"
+msgstr "Luchdaich"
+
+#: ../../../src/GameStateLoad.cpp:695
+msgid "Entering game world..."
+msgstr "A’ dol a-steach do shaoghal a’ gheama…"
+
+#: ../../../src/GameStateLoad.cpp:698
+msgid "Loading saved game..."
+msgstr "A’ luchdadh geama air a shàbhaladh…"
+
+#: ../../../src/GameStateLoad.cpp:731
+msgid "Invalid save"
+msgstr "Geama air a shàbhaladh mì-dhligheach"
+
+#: ../../../src/GameStateLoad.cpp:755 ../../../src/ItemManager.cpp:761
+#: ../../../src/MenuPowers.cpp:778 ../../../src/MenuPowers.cpp:1144
+#: ../../../src/MenuPowers.cpp:1544
+#, c-format
+msgid "Level %d"
+msgstr "Leibheil %d"
+
+#: ../../../src/GameStateNew.cpp:65 ../../../src/InputState.cpp:403
+#: ../../../src/MenuConfig.cpp:241
+msgid "Cancel"
+msgstr "Sguir dheth"
+
+#: ../../../src/GameStateNew.cpp:68
+msgid "Create"
+msgstr "Cruthaich"
+
+#: ../../../src/GameStateNew.cpp:76
+msgid "Randomize"
+msgstr "Cuir air thuaiream"
+
+#: ../../../src/GameStateNew.cpp:92
+msgid "Choose a Portrait"
+msgstr "Tagh dealbh"
+
+#: ../../../src/GameStateNew.cpp:96
+msgid "Choose a Name"
+msgstr "Tagh ainm"
+
+#: ../../../src/GameStateNew.cpp:100
+msgid "Permadeath?"
+msgstr "Bàs maireannach?"
+
+#: ../../../src/GameStateNew.cpp:104
+msgid "Choose a Class"
+msgstr "Tagh clas"
+
+#: ../../../src/GameStateTitle.cpp:107
+msgid "Play Game"
+msgstr "Cluich geama"
+
+#: ../../../src/GameStateTitle.cpp:110
+msgid "Enable a core mod to continue"
+msgstr "Cuir bun-thuilleadan an comas gus leantainn air adhart"
+
+#: ../../../src/GameStateTitle.cpp:114
+msgid "Configuration"
+msgstr "Rèiteachadh"
+
+#: ../../../src/GameStateTitle.cpp:117
+msgid "Credits"
+msgstr "Urram"
+
+#: ../../../src/GameStateTitle.cpp:120
+msgid "Exit Game"
+msgstr "Fàg an geama"
+
+#: ../../../src/InputState.cpp:404
+msgid "Accept"
+msgstr "Gabh ris"
+
+#: ../../../src/InputState.cpp:405 ../../../src/SDLInputState.cpp:658
+msgid "Up"
+msgstr "Suas"
+
+#: ../../../src/InputState.cpp:406 ../../../src/SDLInputState.cpp:636
+msgid "Down"
+msgstr "Sìos"
+
+#: ../../../src/InputState.cpp:407 ../../../src/SDLInputState.cpp:643
+msgid "Left"
+msgstr "Gu clì"
+
+#: ../../../src/InputState.cpp:408 ../../../src/SDLInputState.cpp:653
+msgid "Right"
+msgstr "Gu deas"
+
+#: ../../../src/InputState.cpp:409
+msgid "Bar1"
+msgstr "Bàr 1"
+
+#: ../../../src/InputState.cpp:410
+msgid "Bar2"
+msgstr "Bàr 2"
+
+#: ../../../src/InputState.cpp:411
+msgid "Bar3"
+msgstr "Bàr 3"
+
+#: ../../../src/InputState.cpp:412
+msgid "Bar4"
+msgstr "Bàr 4"
+
+#: ../../../src/InputState.cpp:413
+msgid "Bar5"
+msgstr "Bàr 5"
+
+#: ../../../src/InputState.cpp:414
+msgid "Bar6"
+msgstr "Bàr 6"
+
+#: ../../../src/InputState.cpp:415
+msgid "Bar7"
+msgstr "Bàr 7"
+
+#: ../../../src/InputState.cpp:416
+msgid "Bar8"
+msgstr "Bàr 8"
+
+#: ../../../src/InputState.cpp:417
+msgid "Bar9"
+msgstr "Bàr 9"
+
+#: ../../../src/InputState.cpp:418
+msgid "Bar0"
+msgstr "Bàr 0"
+
+#: ../../../src/InputState.cpp:419 ../../../src/MenuActionBar.cpp:81
+#: ../../../src/MenuCharacter.cpp:54
+msgid "Character"
+msgstr "Pearsa"
+
+#: ../../../src/InputState.cpp:420 ../../../src/MenuActionBar.cpp:82
+#: ../../../src/MenuInventory.cpp:129 ../../../src/MenuVendor.cpp:57
+msgid "Inventory"
+msgstr "Tasgadh"
+
+#: ../../../src/InputState.cpp:421 ../../../src/MenuActionBar.cpp:83
+#: ../../../src/MenuPowers.cpp:168
+msgid "Powers"
+msgstr "Cumhachdan"
+
+#: ../../../src/InputState.cpp:422 ../../../src/MenuActionBar.cpp:84
+#: ../../../src/MenuLog.cpp:72
+msgid "Log"
+msgstr "Leabhar-latha"
+
+#: ../../../src/InputState.cpp:423
+msgid "Main1"
+msgstr "Prìomh-ghnìomh"
+
+#: ../../../src/InputState.cpp:424
+msgid "Main2"
+msgstr "Gnìomh dàrnach"
+
+#: ../../../src/InputState.cpp:425
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: ../../../src/InputState.cpp:426
+msgid "Shift"
+msgstr "Shift"
+
+#: ../../../src/InputState.cpp:427
+msgid "Alt"
+msgstr "Alt"
+
+#: ../../../src/InputState.cpp:428 ../../../src/SDLInputState.cpp:635
+msgid "Delete"
+msgstr "Delete"
+
+#: ../../../src/InputState.cpp:429
+msgid "ActionBar Accept"
+msgstr "Bàr – Gabh ris"
+
+#: ../../../src/InputState.cpp:430
+msgid "ActionBar Left"
+msgstr "Bàr – Gu clì"
+
+#: ../../../src/InputState.cpp:431
+msgid "ActionBar Right"
+msgstr "Bàr – Gu deas"
+
+#: ../../../src/InputState.cpp:432
+msgid "ActionBar Use"
+msgstr "Bàr – Cleachd"
+
+#: ../../../src/InputState.cpp:433
+msgid "Developer Menu"
+msgstr "Clàr-taice an luchd-leasachaidh"
+
+#: ../../../src/InputState.cpp:435
+msgid "Left Mouse"
+msgstr "Clì na luchaige"
+
+#: ../../../src/InputState.cpp:436
+msgid "Middle Mouse"
+msgstr "Meadhanach na luchaige"
+
+#: ../../../src/InputState.cpp:437
+msgid "Right Mouse"
+msgstr "Deas na luchaige"
+
+#: ../../../src/InputState.cpp:438
+msgid "Wheel Up"
+msgstr "Cuibhle suas"
+
+#: ../../../src/InputState.cpp:439
+msgid "Wheel Down"
+msgstr "Cuibhle sìos"
+
+#: ../../../src/InputState.cpp:440
+msgid "Mouse X1"
+msgstr "X1 na luchaige"
+
+#: ../../../src/InputState.cpp:441
+msgid "Mouse X2"
+msgstr "X2 na luchaige"
+
+#: ../../../src/ItemManager.cpp:464 ../../../src/ItemManager.cpp:467
+msgid "Unknown Item"
+msgstr "Nì nach aithne dhuinn"
+
+#: ../../../src/ItemManager.cpp:662 ../../../src/MenuPowers.cpp:887
+#, c-format
+msgid "%d%% Speed"
+msgstr "Luaths de %d%%"
+
+#: ../../../src/ItemManager.cpp:666 ../../../src/MenuPowers.cpp:890
+#, c-format
+msgid "%d%% Attack Speed"
+msgstr "Luaths ionnsaighe de %d%%"
+
+#: ../../../src/ItemManager.cpp:688 ../../../src/MenuCharacter.cpp:354
+#: ../../../src/MenuPowers.cpp:833
+#, c-format
+msgid "Resistance (%s)"
+msgstr "Comas-seasaimh (%s)"
+
+#: ../../../src/ItemManager.cpp:698
+#, c-format
+msgid "Requires %s"
+msgstr "Feumach air %s"
+
+#: ../../../src/ItemManager.cpp:747
+msgid "Quest Item"
+msgstr "Nì cinn-thurais"
+
+#: ../../../src/ItemManager.cpp:774
+#, c-format
+msgid "Quality: %s"
+msgstr "Càileachd: %s"
+
+#: ../../../src/ItemManager.cpp:799
+#, c-format
+msgid "Absorb: %d-%d"
+msgstr "Ceapadh: %d–%d"
+
+#: ../../../src/ItemManager.cpp:801
+#, c-format
+msgid "Absorb: %d"
+msgstr "Ceapadh: %d"
+
+#: ../../../src/ItemManager.cpp:841 ../../../src/MenuPowers.cpp:1131
+#: ../../../src/MenuPowers.cpp:1134
+#, c-format
+msgid "Requires Level %d"
+msgstr "Feum air leibheil %d"
+
+#: ../../../src/ItemManager.cpp:852 ../../../src/MenuPowers.cpp:1123
+#: ../../../src/MenuPowers.cpp:1125
+#, c-format
+msgid "Requires %s %d"
+msgstr "Feum air: %s %d"
+
+#: ../../../src/ItemManager.cpp:863
+#, c-format
+msgid "Requires Class: %s"
+msgstr "Feum air a’ chlas: %s"
+
+#: ../../../src/ItemManager.cpp:878 ../../../src/ItemManager.cpp:890
+#, c-format
+msgid "Buy Price: %d %s"
+msgstr "Prìs ceannaich: %d %s"
+
+#: ../../../src/ItemManager.cpp:880 ../../../src/ItemManager.cpp:892
+#, c-format
+msgid "Buy Price: %d %s each"
+msgstr "Prìs ceannaich: %d %s an urra"
+
+#: ../../../src/ItemManager.cpp:900
+#, c-format
+msgid "Sell Price: %d %s"
+msgstr "Prìs reic: %d %s"
+
+#: ../../../src/ItemManager.cpp:902
+#, c-format
+msgid "Sell Price: %d %s each"
+msgstr "Prìs reic: %d %s an urra"
+
+#: ../../../src/ItemManager.cpp:911
+msgid "Set:"
+msgstr "Seata:"
+
+#: ../../../src/ItemManager.cpp:918
+#, c-format
+msgid "%d items:"
+msgstr "%d nithean:"
+
+#: ../../../src/ItemManager.cpp:931 ../../../src/ItemManager.cpp:937
+#, c-format
+msgid "Press [%s] to use"
+msgstr "Brùth air [%s] gus a chleachdadh"
+
+#: ../../../src/ItemManager.cpp:935
+#, c-format
+msgid "Press [%s] to read"
+msgstr "Brùth air [%s] gus a leughadh"
+
+#: ../../../src/MenuActionBar.cpp:220 ../../../src/MenuActionBar.cpp:227
+#: ../../../src/MenuActionBar.cpp:230 ../../../src/MenuActionBar.cpp:236
+#, c-format
+msgid "Hotkey: %s"
+msgstr "Grad-iuchair: %s"
+
+#: ../../../src/MenuActionBar.cpp:593
+msgid "Not enough MP."
+msgstr "Chan fhoghainn na PG."
+
+#: ../../../src/MenuActiveEffects.cpp:124
+#, c-format
+msgid "x%d"
+msgstr "x%d"
+
+#: ../../../src/MenuActiveEffects.cpp:219
+msgid "Remaining:"
+msgstr "Air fhàgail:"
+
+#: ../../../src/MenuActiveEffects.cpp:225
+#, c-format
+msgid "x%d stacks"
+msgstr "x%d cruach(an)"
+
+#: ../../../src/MenuCharacter.cpp:73 ../../../src/MenuCharacter.cpp:78
+msgid "Name"
+msgstr "Ainm"
+
+#: ../../../src/MenuCharacter.cpp:74 ../../../src/MenuCharacter.cpp:79
+msgid "Level"
+msgstr "Leibheil"
+
+#: ../../../src/MenuCharacter.cpp:310
+#, c-format
+msgid "%d unspent stat point"
+msgstr "%d phuing-pearsa nach deach a chleachdadh"
+
+#: ../../../src/MenuCharacter.cpp:313
+#, c-format
+msgid "%d unspent stat points"
+msgstr "%d puing(ean)-pearsa nach deach a chleachdadh"
+
+#: ../../../src/MenuCharacter.cpp:355
+#, c-format
+msgid "Reduces the damage taken from \"%s\" elemental attacks."
+msgstr ""
+"Ìslichidh seo an dochann a dh’fhulaingeas tu o ionnsaighean dùileach “%s”"
+
+#: ../../../src/MenuCharacter.cpp:365 ../../../src/MenuManager.cpp:291
+#, c-format
+msgid "XP: %d"
+msgstr "Puingean-eòlais: %d"
+
+#: ../../../src/MenuCharacter.cpp:367
+#, c-format
+msgid "Next: %d"
+msgstr "An ath-fhear: %d"
+
+#: ../../../src/MenuCharacter.cpp:373
+#, c-format
+msgid "base (%d), bonus (%d)"
+msgstr "bunait (%d), duais (%d)"
+
+#: ../../../src/MenuCharacter.cpp:381 ../../../src/MenuCharacter.cpp:395
+msgid "Related stats:"
+msgstr "Stadastaireachd cho-cheangailte:"
+
+#: ../../../src/MenuCharacter.cpp:421 ../../../src/MenuCharacter.cpp:445
+#, c-format
+msgid "Each level grants %d."
+msgstr "Bheir gach leibheil %d dhut."
+
+#: ../../../src/MenuCharacter.cpp:425 ../../../src/MenuCharacter.cpp:449
+#, c-format
+msgid "Each point of %s grants %d."
+msgstr "Bheir gach puing dhe %s %d dhut."
+
+#: ../../../src/MenuConfig.cpp:122 ../../../src/MenuConfig.cpp:1148
+msgid "Clear"
+msgstr "Falamhaich"
+
+#: ../../../src/MenuConfig.cpp:122 ../../../src/MenuConfig.cpp:1146
+msgid "Assign:"
+msgstr "Sònraich:"
+
+#: ../../../src/MenuConfig.cpp:123 ../../../src/MenuConfig.cpp:240
+msgid "Defaults"
+msgstr "Bun-roghainnean"
+
+#: ../../../src/MenuConfig.cpp:123
+msgid "Reset ALL settings?"
+msgstr "A bheil thu airson GACH roghainn ath-shuidheachadh?"
+
+#: ../../../src/MenuConfig.cpp:239 ../../../src/MenuNumPicker.cpp:49
+msgid "OK"
+msgstr "Ceart ma-thà"
+
+#: ../../../src/MenuConfig.cpp:243
+msgid "Continue"
+msgstr "Lean air adhart"
+
+#: ../../../src/MenuConfig.cpp:286
+msgid "Default"
+msgstr "Bun-roghainn"
+
+#: ../../../src/MenuConfig.cpp:286
+msgid ""
+"Show all loot tooltips, except for those that would be obscured by the "
+"player or an enemy. Temporarily show all loot tooltips with 'Alt'."
+msgstr ""
+"Seall a h-uile gliocas-sgrìn air spùinn ach an fheadhainn a rachadh fhalach "
+"leis a’ cluicheadair no le nàmhaid. Seall a h-uile gliocas-sgrìn air spùinn "
+"rè seal le “Alt”."
+
+#: ../../../src/MenuConfig.cpp:287
+msgid "Show all"
+msgstr "Seall na h-uile"
+
+#: ../../../src/MenuConfig.cpp:287
+msgid ""
+"Always show loot tooltips. Temporarily hide all loot tooltips with 'Alt'."
+msgstr ""
+"Seall gliocasan-sgrìn air spùinn an-còmhnaidh. Falaich a h-uile gliocas-"
+"sgrìn air spùinn rè seal le “Alt”."
+
+#: ../../../src/MenuConfig.cpp:288 ../../../src/MenuConfig.cpp:293
+msgid "Hidden"
+msgstr "Falaichte"
+
+#: ../../../src/MenuConfig.cpp:288
+msgid ""
+"Always hide loot tooltips, except for when a piece of loot is hovered with "
+"the mouse cursor. Temporarily show all loot tooltips with 'Alt'."
+msgstr ""
+"Falaich gliocasan-sgrìn air spùinn an-còmhnaidh ach nuair a chumas tu an "
+"luchag air cuid spùinne. Seall a h-uile gliocas-sgrìn air spùinn rè seal le "
+"“Alt”."
+
+#: ../../../src/MenuConfig.cpp:291
+msgid "Visible"
+msgstr "Ri fhaicinn"
+
+#: ../../../src/MenuConfig.cpp:292
+msgid "Visible (2x zoom)"
+msgstr "Ri fhaicinn (sùm 2x)"
+
+#: ../../../src/MenuConfig.cpp:296
+msgid ""
+"Controls the type of warning to be activated when the player is below the "
+"low health threshold."
+msgstr ""
+"Stiùirichidh seo an seòrsa de rabhadh a gheibh an cluicheadair nuair a bhios"
+" an t-slàinte nas ìsle na an stairsneach."
+
+#: ../../../src/MenuConfig.cpp:297
+msgid "- Display a message"
+msgstr "- Seall teachdaireachd"
+
+#: ../../../src/MenuConfig.cpp:298
+msgid "- Play a sound"
+msgstr "- Cluich fuaim"
+
+#: ../../../src/MenuConfig.cpp:299
+msgid "- Change the cursor"
+msgstr "- Atharraich an cùrsair"
+
+#: ../../../src/MenuConfig.cpp:301
+msgid "Disabled"
+msgstr "À comas"
+
+#: ../../../src/MenuConfig.cpp:302
+msgid "All"
+msgstr "Na h-uile"
+
+#: ../../../src/MenuConfig.cpp:303
+msgid "Message & Cursor"
+msgstr "Teachdaireachd ⁊ cùrsair"
+
+#: ../../../src/MenuConfig.cpp:304
+msgid "Message & Sound"
+msgstr "Teachdaireachd ⁊ fuaim"
+
+#: ../../../src/MenuConfig.cpp:305
+msgid "Sound & Cursor"
+msgstr "Fuaim ⁊ cùrsair"
+
+#: ../../../src/MenuConfig.cpp:306
+msgid "Message"
+msgstr "Teachdaireachd"
+
+#: ../../../src/MenuConfig.cpp:307
+msgid "Cursor"
+msgstr "Cùrsair"
+
+#: ../../../src/MenuConfig.cpp:308
+msgid "Sound"
+msgstr "Fuaim"
+
+#: ../../../src/MenuConfig.cpp:314
+msgid ""
+"When the player's health drops below the given threshold, the low health "
+"notifications are triggered if one or more of them is enabled."
+msgstr ""
+"Nuair a thèid slàinte a’ chluicheadair nas ìsle na an stairsneach, nochdaidh"
+" na brathan droch-shlàinte a tha an comas."
+
+#: ../../../src/MenuConfig.cpp:327 ../../../src/MenuConfig.cpp:1561
+msgid "Exit"
+msgstr "Fàg an geama"
+
+#: ../../../src/MenuConfig.cpp:328
+msgid "Video"
+msgstr "Video"
+
+#: ../../../src/MenuConfig.cpp:329
+msgid "Audio"
+msgstr "Fuaim"
+
+#: ../../../src/MenuConfig.cpp:330
+msgid "Interface"
+msgstr "Eadar-aghaidh"
+
+#: ../../../src/MenuConfig.cpp:331
+msgid "Input"
+msgstr "Ion-chur"
+
+#: ../../../src/MenuConfig.cpp:332
+msgid "Keybindings"
+msgstr "Nasgadh iuchraichean"
+
+#: ../../../src/MenuConfig.cpp:333
+msgid "Mods"
+msgstr "Tuilleadain"
+
+#: ../../../src/MenuConfig.cpp:345
+msgid "Paused"
+msgstr "’Na stad"
+
+#: ../../../src/MenuConfig.cpp:347
+msgid "Time Played"
+msgstr "Ùine air a chluich"
+
+#: ../../../src/MenuConfig.cpp:349
+msgid "Renderer"
+msgstr "Inneal-reandaraidh"
+
+#: ../../../src/MenuConfig.cpp:350
+msgid "Full Screen Mode"
+msgstr "Modh làn-sgrìn"
+
+#: ../../../src/MenuConfig.cpp:351
+msgid "Hardware surfaces"
+msgstr "Uachdaran bathair-chruaidh"
+
+#: ../../../src/MenuConfig.cpp:352
+msgid "V-Sync"
+msgstr "Sioncronachadh-V"
+
+#: ../../../src/MenuConfig.cpp:353
+msgid "Texture Filtering"
+msgstr "Criathrag innich"
+
+#: ../../../src/MenuConfig.cpp:354
+msgid "DPI scaling"
+msgstr "Sgèileadh DPI"
+
+#: ../../../src/MenuConfig.cpp:355
+msgid "Parallax Layers"
+msgstr "Breathan paraileige"
+
+#: ../../../src/MenuConfig.cpp:356
+msgid "Allow changing gamma"
+msgstr "Faodar gamma atharrachadh"
+
+#: ../../../src/MenuConfig.cpp:357
+msgid "Gamma"
+msgstr "Gamma"
+
+#: ../../../src/MenuConfig.cpp:359
+msgid "Sound Volume"
+msgstr "Àirde na fuaime"
+
+#: ../../../src/MenuConfig.cpp:360
+msgid "Music Volume"
+msgstr "Àirde a’ chiùil"
+
+#: ../../../src/MenuConfig.cpp:362
+msgid "Language"
+msgstr "Cànan"
+
+#: ../../../src/MenuConfig.cpp:363
+msgid "Show FPS"
+msgstr "Seall FPS"
+
+#: ../../../src/MenuConfig.cpp:364
+msgid "Hardware mouse cursor"
+msgstr "Cùrsair luchaige bathair-chruaidh"
+
+#: ../../../src/MenuConfig.cpp:365
+msgid "Colorblind Mode"
+msgstr "Modh dath-dhoille"
+
+#: ../../../src/MenuConfig.cpp:366
+msgid "Developer Mode"
+msgstr "Modh an luchd-leasachaidh"
+
+#: ../../../src/MenuConfig.cpp:367
+msgid "Subtitles"
+msgstr "Fo-thiotalan"
+
+#: ../../../src/MenuConfig.cpp:368
+msgid "Loot tooltip visibility"
+msgstr "Faicsinneachd gliocasan-sgrìn nam spùinn"
+
+#: ../../../src/MenuConfig.cpp:369
+msgid "Mini-map mode"
+msgstr "Modh a’ mheanbh-mhapa"
+
+#: ../../../src/MenuConfig.cpp:370
+msgid "Always show stat bar labels"
+msgstr "Seall leubailean bàr na stadastaireachd an-còmhnaidh"
+
+#: ../../../src/MenuConfig.cpp:371
+msgid "Allow stat bar auto-hiding"
+msgstr "Ceadaich falach fèin-obrachail air bàr na stadastaireachd"
+
+#: ../../../src/MenuConfig.cpp:372
+msgid "Show combat text"
+msgstr "Seall teacsa na còmhraige"
+
+#: ../../../src/MenuConfig.cpp:373
+msgid "Automatically equip items"
+msgstr "Uidheamaich nithean gu fèin-obrachail"
+
+#: ../../../src/MenuConfig.cpp:374
+msgid "Show hidden entity markers"
+msgstr "Seall comharraidhean nan nithean falaichte"
+
+#: ../../../src/MenuConfig.cpp:375
+msgid "Low health notification"
+msgstr "Brath na droch-shlàinte"
+
+#: ../../../src/MenuConfig.cpp:376
+msgid "Low health threshold"
+msgstr "Stairsneach na droch-shlàinte"
+
+#: ../../../src/MenuConfig.cpp:379
+msgid "Joystick"
+msgstr "Joystick"
+
+#: ../../../src/MenuConfig.cpp:380
+msgid "Move hero using mouse"
+msgstr "Gluais an gaisgeach leis an luchag"
+
+#: ../../../src/MenuConfig.cpp:381
+msgid "Mouse aim"
+msgstr "Amas luchaige"
+
+#: ../../../src/MenuConfig.cpp:382
+msgid "Do not use mouse"
+msgstr "Na cleachd an luchag"
+
+#: ../../../src/MenuConfig.cpp:383
+msgid "Swap mouse movement button"
+msgstr "Suaip putan luchaige a’ ghluasaid"
+
+#: ../../../src/MenuConfig.cpp:384
+msgid "Attack with mouse movement"
+msgstr "Thoir ionnsaigh le gluasad na luchaige"
+
+#: ../../../src/MenuConfig.cpp:385
+msgid "Joystick Deadzone"
+msgstr "Marbh-sòn an joystick"
+
+#: ../../../src/MenuConfig.cpp:395
+#, c-format
+msgid "Primary binding: %s"
+msgstr "Prìomh-nasgadh: %s"
+
+#: ../../../src/MenuConfig.cpp:396
+#, c-format
+msgid "Alternate binding: %s"
+msgstr "Nasgadh eile: %s"
+
+#: ../../../src/MenuConfig.cpp:397
+#, c-format
+msgid "Joystick binding: %s"
+msgstr "Nasgadh joystick: %s"
+
+#: ../../../src/MenuConfig.cpp:496
+msgid ""
+"Will try to store surfaces in video memory versus system memory. The effect "
+"this has on performance depends on the renderer."
+msgstr ""
+"Feuchaidh sinn ri uachdaran a stòradh ann an cuimhne a’ video seach an "
+"t-siostaim. Tha a’ bhuaidh a th’ aige air an dèanadas a-rèir an inneil-"
+"reandaraidh."
+
+#: ../../../src/MenuConfig.cpp:497
+msgid ""
+"Prevents screen tearing. Disable if you experience \"stuttering\" in "
+"windowed mode or input lag."
+msgstr ""
+"Tha seo an aghaidh reubadh na sgrìn. cuir à comas e ma tha a modh uinneagach"
+" “stadach” no ma tha maille air an ion-chur."
+
+#: ../../../src/MenuConfig.cpp:498
+msgid ""
+"When enabled, this uses the screen DPI in addition to the window dimensions "
+"to scale the rendering resolution. Otherwise, only the window dimensions are"
+" used."
+msgstr ""
+"Nuair a bhios seo an comas, cleachdaidh e DPI na sgrìn a bharrachd air meud "
+"na h-uinneige airson dùmhlachd-bhreacaidh an reandaraidh a sgèileadh. Mur "
+"eil, cha dèid ach meud na h-uinneige a chleachdadh."
+
+#: ../../../src/MenuConfig.cpp:499
+msgid ""
+"This enables parallax (non-tile) layers. Disabling this setting can improve "
+"performance in some cases."
+msgstr ""
+"Cuiridh seo breathan paraileige (nach eil ’nan leacagan) an comas. "
+"Dh’fhaoidte gum faigh thu barrachd dèanadais ma chuireas tu seo à comas."
+
+#: ../../../src/MenuConfig.cpp:500
+msgid ""
+"Enables the below setting that controls the screen gamma level. The behavior"
+" of the gamma setting can vary between platforms."
+msgstr ""
+"Cuiridh seo an comas an roghainn gu h-ìosal air leibheil gamma na sgrìn. "
+"Dh’fhaoidte gum bi giùlan eadar-dhealaichte na roghainn gamma air ùrlaran "
+"eadar-dhealaichte."
+
+#: ../../../src/MenuConfig.cpp:501
+msgid ""
+"Provides additional text for information that is primarily conveyed through "
+"color."
+msgstr ""
+"Solairidh seo teacsa a bharrachd airson fiosrachadh a thèid a shealltainn le"
+" dath gu h-àraidh."
+
+#: ../../../src/MenuConfig.cpp:502
+msgid ""
+"Some mods will automatically hide the stat bars when they are inactive. "
+"Disabling this option will keep them displayed at all times."
+msgstr ""
+"Falaichidh cuid a thuilleadain bàraichean na stadastaireachd nuair a bhios "
+"iad à comas. Ma chuireas tu an roghainn seo à comas, thèid an sealltainn an-"
+"còmhnaidh."
+
+#: ../../../src/MenuConfig.cpp:503
+msgid ""
+"When enabled, empty equipment slots will be filled with applicable items "
+"when they are obtained."
+msgstr ""
+"Nuair a bhios seo an comas, thèid slotaichean uidheamachd falamh a lìonadh "
+"le nithean iomchaidh nuair a gheibh thu iad."
+
+#: ../../../src/MenuConfig.cpp:504
+msgid ""
+"Shows a marker above enemies, allies, and the player when they are obscured "
+"by tall objects."
+msgstr ""
+"Seallaidh seo comharra os cionn nan nàimhdean, nan caidreabhach ’s a’ "
+"chluicheadair nuair a thèid am falach le nithean mòra."
+
+#: ../../../src/MenuConfig.cpp:505
+msgid ""
+"This allows the game to be controlled entirely with the keyboard (or "
+"joystick)."
+msgstr ""
+"Nuair a bhiod seo air, ’s urrainn dhut an geama a stiùireadh leis a’ mheur-"
+"chlàr (no joystick) a-mhàin."
+
+#: ../../../src/MenuConfig.cpp:506
+msgid ""
+"When 'Move hero using mouse' is enabled, this setting controls if 'Main1' or"
+" 'Main2' is used to move the hero. If enabled, 'Main2' will move the hero "
+"instead of 'Main1'."
+msgstr ""
+"Nuair a bhios “Gluais an gaisgeach leis an luchag” an comas, stiùirichidh an"
+" roghainn seo co-dhiù an dèid “Prìomh-ghnìomh” no “Gnìomh dàrnach” a "
+"chleachdadh airson an gaisgeach a ghluasad. Ma bhios e an comas, gluaisidh "
+"“Gnìomh dàrnach” seach “Prìomh-ghnìomh” an gaisgeach."
+
+#: ../../../src/MenuConfig.cpp:507
+msgid ""
+"When 'Move hero using mouse' is enabled, this setting controls if the Power "
+"assigned to the movement button can be used by targeting an enemy. If this "
+"setting is disabled, it is required to use 'Shift' to access the Power "
+"assigned to the movement button."
+msgstr ""
+"Nuair a bhios “Gluais an gaisgeach leis an luchag” an comas, stiùirichidh an"
+" roghainn seo ma ghabhas a’ chumhachd a chaidh iomruineadh do phutan a’ "
+"ghluasaid a chleachdadh le amas air nàmhaid. Ma tha an roghainn seo à comas,"
+" feumaidh tu “Shift” a chleachdadh ach an cleachd thu a’ chumhachd a chaidh "
+"iomruineadh do phutan a’ ghluasaid."
+
+#: ../../../src/MenuConfig.cpp:508
+msgid ""
+"The player's attacks will be aimed in the direction of the mouse cursor when"
+" this is enabled."
+msgstr ""
+"Thèid ionnsaighean a’ chluicheadair a dh’amas an comhair cùrsair na luchaige"
+" nuair a bhios seo an comas."
+
+#: ../../../src/MenuConfig.cpp:559
+msgid "Active Mods"
+msgstr "Tuilleadain ghnìomhach"
+
+#: ../../../src/MenuConfig.cpp:568
+msgid "Available Mods"
+msgstr "Tuilleadain ri làimh"
+
+#: ../../../src/MenuConfig.cpp:587
+msgid "<< Disable"
+msgstr "<< Cuir à comas"
+
+#: ../../../src/MenuConfig.cpp:593
+msgid "Enable >>"
+msgstr "Cuir an comas >>"
+
+#: ../../../src/MenuConfig.cpp:1420
+msgid "Version:"
+msgstr "Tionndadh:"
+
+#: ../../../src/MenuConfig.cpp:1425
+msgid "Game:"
+msgstr "Geama:"
+
+#: ../../../src/MenuConfig.cpp:1430
+msgid "Engine version:"
+msgstr "Tionndadh an einnsein:"
+
+#: ../../../src/MenuConfig.cpp:1438
+msgid "Requires mods:"
+msgstr "Feum air tuilleadain:"
+
+#: ../../../src/MenuConfig.cpp:1544 ../../../src/SDLInputState.cpp:688
+msgid "(none)"
+msgstr "(chan eil gin)"
+
+#: ../../../src/MenuConfig.cpp:1561
+msgid "Save & Exit"
+msgstr "Sàbhail is fàg"
+
+#: ../../../src/MenuDevConsole.cpp:63
+msgid "Execute"
+msgstr "Gnìomhaich"
+
+#: ../../../src/MenuDevConsole.cpp:101 ../../../src/MenuDevConsole.cpp:151
+msgid "Developer Console"
+msgstr "Modh an luchd-leasachaidh"
+
+#: ../../../src/MenuDevConsole.cpp:141
+#, c-format
+msgid "Use '%s' to inspect with the cursor."
+msgstr "Cleachd “%s” gus a sgrùdadh leis a’ chùrsair."
+
+#: ../../../src/MenuDevConsole.cpp:146
+msgid "Arguments with spaces should be enclosed with double quotes. Example:"
+msgstr ""
+"Bu chòir dhut comharran-labhairt dùbailte a chur timcheall air argamaidean "
+"sa bheil geal-spàs. Mar eisimpleir:"
+
+#: ../../../src/MenuDevConsole.cpp:147
+msgid "Type 'help' to get a list of commands."
+msgstr "Sgrìobh “help” gus liosta de na h-àitheantan fhaighinn."
+
+#: ../../../src/MenuDevConsole.cpp:209 ../../../src/MenuDevConsole.cpp:213
+msgid "px"
+msgstr "px"
+
+#: ../../../src/MenuDevConsole.cpp:224
+msgid "Distance"
+msgstr "Astar"
+
+#: ../../../src/MenuDevConsole.cpp:239 ../../../src/MenuDevConsole.cpp:286
+msgid "Entity"
+msgstr "Nì"
+
+#: ../../../src/MenuDevConsole.cpp:261 ../../../src/MenuDevConsole.cpp:268
+msgid "none"
+msgstr "chan eil gin"
+
+#: ../../../src/MenuDevConsole.cpp:262 ../../../src/MenuDevConsole.cpp:264
+msgid "wall"
+msgstr "balla"
+
+#: ../../../src/MenuDevConsole.cpp:263 ../../../src/MenuDevConsole.cpp:265
+msgid "short wall / pit"
+msgstr "balla goirid / sloc"
+
+#: ../../../src/MenuDevConsole.cpp:266
+msgid "entity"
+msgstr "nì"
+
+#: ../../../src/MenuDevConsole.cpp:267
+msgid "entity, ally"
+msgstr "nì, caidreabhach"
+
+#: ../../../src/MenuDevConsole.cpp:274
+msgid "Tile"
+msgstr "Leacag"
+
+#: ../../../src/MenuDevConsole.cpp:360
+msgid "adds a power to the action bar"
+msgstr "cuiridh seo cumhachd ri bàr nan gnìomh"
+
+#: ../../../src/MenuDevConsole.cpp:361
+msgid "turns on/off the display of the FPS counter"
+msgstr "seallaidh/falaichidh seo cunntas nan FPS"
+
+#: ../../../src/MenuDevConsole.cpp:362
+msgid "turns on/off all of the HUD elements"
+msgstr "cuiridh seo a h-uile nì a’ HUD air no dheth"
+
+#: ../../../src/MenuDevConsole.cpp:363
+msgid "turns on/off the developer hud"
+msgstr "cuiridh seo HUD an luchd-leasachaidh air no dheth"
+
+#: ../../../src/MenuDevConsole.cpp:364
+msgid ""
+"Prints a list of powers that match a search term. No search term will list "
+"all items"
+msgstr ""
+"Seallaidh seo liosta nan cumhachdan a fhreagras ris an fhacal-luirg. Mur eil"
+" facal-luirg ann, thèid gach nì a shealltainn"
+
+#: ../../../src/MenuDevConsole.cpp:365
+msgid "Prints out all the map filenames located in the \"maps/\" directory."
+msgstr ""
+"Seallaidh seo ainmean faidhle nam mapaichean uile a tha sa phasgan “maps/”."
+
+#: ../../../src/MenuDevConsole.cpp:366
+msgid ""
+"Prints out the active campaign statuses that match a search term. No search "
+"term will list all active statuses"
+msgstr ""
+"Seallaidh seo staidean gnìomhach nan iomairtean a fhreagras ris an fhacal-"
+"luirg. Mur eil facal-luirg ann, thèid gach staid ghnìomhach a shealltainn"
+
+#: ../../../src/MenuDevConsole.cpp:367
+msgid ""
+"Prints a list of items that match a search term. No search term will list "
+"all items"
+msgstr ""
+"Seallaidh seo liosta nan nithean a fhreagras ris an fhacal-luirg. Mur eil "
+"facal-luirg ann, thèid gach nì a shealltainn"
+
+#: ../../../src/MenuDevConsole.cpp:368
+msgid ""
+"parses a series of event components and executes them as a single event"
+msgstr ""
+"parsaidh seo sreath dhe cho-phàirtean thachartasan agus ruithidh e ann an "
+"aon tachartas iad"
+
+#: ../../../src/MenuDevConsole.cpp:369
+msgid "clears the command history"
+msgstr "falamhaichidh seo eachdraidh nan àitheantan"
+
+#: ../../../src/MenuDevConsole.cpp:370
+msgid "displays this text"
+msgstr "seallaidh seo an teacsa seo"
+
+#: ../../../src/MenuDevConsole.cpp:377
+msgid "Toggled the developer hud"
+msgstr "Chaidh HUD an luchd-leasachaidh a thoglachadh"
+
+#: ../../../src/MenuDevConsole.cpp:381
+msgid "Toggled the hud"
+msgstr "Chaidh an HUD a thoglachadh"
+
+#: ../../../src/MenuDevConsole.cpp:385
+msgid "Toggled the FPS counter"
+msgstr "Chaidh cunntar nan FPS a thoglachadh"
+
+#: ../../../src/MenuDevConsole.cpp:534
+msgid "ERROR: Incorrect number of arguments"
+msgstr "MEARACHD: Chan eil argamaidean gu leòr ann"
+
+#: ../../../src/MenuDevConsole.cpp:536 ../../../src/MenuDevConsole.cpp:564
+msgid "HINT:"
+msgstr "OIDHEAM:"
+
+#: ../../../src/MenuDevConsole.cpp:536
+msgid "<id>"
+msgstr "<id>"
+
+#: ../../../src/MenuDevConsole.cpp:552
+#, c-format
+msgid "ERROR: '%s' is not a valid event key"
+msgstr "MEARACHD: Chan eil “%s” ’na h-iuchair tachartais dhligheach"
+
+#: ../../../src/MenuDevConsole.cpp:562
+msgid "ERROR: Too few arguments"
+msgstr "MEARACHD: Chan eil argamaidean gu leòr ann"
+
+#: ../../../src/MenuDevConsole.cpp:564
+msgid "<key>=<val> <key>=<val> ..."
+msgstr "<key>=<val> <key>=<val> …"
+
+#: ../../../src/MenuDevConsole.cpp:569
+msgid "ERROR: Unknown command"
+msgstr "MEARACHD: Àithne nach aithne dhuinn"
+
+#: ../../../src/MenuDevConsole.cpp:571
+msgid "HINT: Type help"
+msgstr "OIDHEAM: Sgrìobh “help”"
+
+#: ../../../src/MenuEnemy.cpp:138
+#, c-format
+msgid "%s level %d"
+msgstr "%s leibheil %d"
+
+#: ../../../src/MenuEnemy.cpp:162
+msgid "Dead"
+msgstr "Marbh"
+
+#: ../../../src/MenuEnemy.cpp:164
+msgid "Destroyed"
+msgstr "Air a mhilleadh"
+
+#: ../../../src/MenuInventory.cpp:177
+#, c-format
+msgid "Lost %d%% of %s."
+msgstr "Chaill thu %d%% dhe %s."
+
+#: ../../../src/MenuInventory.cpp:184
+#, c-format
+msgid "Lost %d%% of total XP."
+msgstr "Chaill thu %d%% dhe na puingean-eòlais iomlan."
+
+#: ../../../src/MenuInventory.cpp:189
+#, c-format
+msgid "Lost %d%% of current level XP."
+msgstr "Chaill thu %d%% dhe na puingean-eòlais airson an leibheil seo."
+
+#: ../../../src/MenuInventory.cpp:215
+#, c-format
+msgid "Lost %s."
+msgstr "Chaill thu %s."
+
+#: ../../../src/MenuInventory.cpp:257 ../../../src/MenuStash.cpp:195
+#, c-format
+msgid "%d %s"
+msgstr "%d %s"
+
+#: ../../../src/MenuInventory.cpp:300
+msgid "Pick up item(s):"
+msgstr "Tog nì:"
+
+#: ../../../src/MenuInventory.cpp:301
+msgid "Use or equip item:"
+msgstr "Cleachd no uidheamaich nì:"
+
+#: ../../../src/MenuInventory.cpp:302
+#, c-format
+msgid "%s modifiers"
+msgstr "Atharraichearan air %s"
+
+#: ../../../src/MenuInventory.cpp:303
+msgid "Select a quantity of item:"
+msgstr "Tagh uiread dhen nì:"
+
+#: ../../../src/MenuInventory.cpp:306
+msgid "Stash item stack:"
+msgstr "Cuir stac nan nithean dhan stòr:"
+
+#: ../../../src/MenuInventory.cpp:308
+msgid "Sell item stack:"
+msgstr "Reic stac nan nithean:"
+
+#: ../../../src/MenuInventory.cpp:574
+msgid "You don't have enough of the required item."
+msgstr "Chan eil gu leòr dhen nì riatanach agad."
+
+#: ../../../src/MenuInventory.cpp:586
+msgid "You can't use this item right now."
+msgstr "Chan urrainn dhut an nì seo a chleachdadh an-dràsta."
+
+#: ../../../src/MenuInventory.cpp:598
+msgid "This item can only be used from the action bar."
+msgstr "Cha ghabh an nì seo cleachdadh ach on bhàr-ghnìomhan."
+
+#: ../../../src/MenuInventory.cpp:716
+msgid "Inventory is full."
+msgstr "Tha an tasgadh làn."
+
+#: ../../../src/MenuInventory.cpp:841
+#, c-format
+msgid "Not enough %s."
+msgstr "Chan eil %s gu leòr agad."
+
+#: ../../../src/MenuInventory.cpp:861 ../../../src/MenuInventory.cpp:868
+msgid "This item can not be sold."
+msgstr "Cha ghabh an nì seo reic."
+
+#: ../../../src/MenuLog.cpp:91
+msgid "Notes"
+msgstr "Nòtaichean"
+
+#: ../../../src/MenuLog.cpp:92
+msgid "Quests"
+msgstr "Cinn-thurais"
+
+#: ../../../src/MenuManager.cpp:295
+#, c-format
+msgid "XP: %d/%d"
+msgstr "Puingean-eòlais: %d/%d"
+
+#: ../../../src/MenuManager.cpp:846
+msgid "This item can not be dropped."
+msgstr "Chan urrainn dhut an nì seo a leigeil às."
+
+#: ../../../src/MenuNumPicker.cpp:59
+msgid "Enter amount:"
+msgstr "Cuir a-steach àireamh:"
+
+#: ../../../src/MenuPowers.cpp:787
+msgid "Passive"
+msgstr "Fulangach"
+
+#: ../../../src/MenuPowers.cpp:792
+#, c-format
+msgid "Costs %d MP"
+msgstr "Cosgaidh e %d puingean-gluasaid"
+
+#: ../../../src/MenuPowers.cpp:796
+#, c-format
+msgid "Costs %d HP"
+msgstr "Cosgaidh e %d puingean-beatha"
+
+#: ../../../src/MenuPowers.cpp:801
+msgid "Cooldown:"
+msgstr "Fuarachadh:"
+
+#: ../../../src/MenuPowers.cpp:866 ../../../src/MenuPowers.cpp:869
+msgid "Damage per second"
+msgstr "Dochann gach diog"
+
+#: ../../../src/MenuPowers.cpp:872 ../../../src/MenuPowers.cpp:875
+msgid "HP per second"
+msgstr "Puingean-beatha gach diog"
+
+#: ../../../src/MenuPowers.cpp:878 ../../../src/MenuPowers.cpp:881
+msgid "MP per second"
+msgstr "Puingean-gluasaid gach diog"
+
+#: ../../../src/MenuPowers.cpp:885
+msgid "Immobilize"
+msgstr "Do-ghluasad"
+
+#: ../../../src/MenuPowers.cpp:893
+msgid "Immunity"
+msgstr "Dìonachd"
+
+#: ../../../src/MenuPowers.cpp:896
+msgid "Immunity to damage over time"
+msgstr "Dìonachd an aghaidh dochainn rè ùine"
+
+#: ../../../src/MenuPowers.cpp:899
+msgid "Immunity to slow"
+msgstr "Dìonachd an aghaidh maille"
+
+#: ../../../src/MenuPowers.cpp:902
+msgid "Immunity to stun"
+msgstr "Dìonachd an aghaidh tuainealaich"
+
+#: ../../../src/MenuPowers.cpp:905
+msgid "Immunity to HP steal"
+msgstr "Dìonachd an aghaidh goid phuingean-beatha"
+
+#: ../../../src/MenuPowers.cpp:908
+msgid "Immunity to MP steal"
+msgstr "Dìonachd an aghaidh goid phuingean-gluasaid"
+
+#: ../../../src/MenuPowers.cpp:911
+msgid "Immunity to knockback"
+msgstr "Dìonachd an aghaidh bualaidh air ais"
+
+#: ../../../src/MenuPowers.cpp:914
+msgid "Immunity to damage reflection"
+msgstr "Dìonachd an aghaidh frith-thilgeil dochainn"
+
+#: ../../../src/MenuPowers.cpp:917
+msgid "Stun"
+msgstr "Tuainealaich"
+
+#: ../../../src/MenuPowers.cpp:920
+msgid "Automatic revive on death"
+msgstr "Ath-ghin fèin-obrachail seach bàs"
+
+#: ../../../src/MenuPowers.cpp:923
+msgid "Convert"
+msgstr "Iompaich"
+
+#: ../../../src/MenuPowers.cpp:926
+msgid "Fear"
+msgstr "Eagal"
+
+#: ../../../src/MenuPowers.cpp:929
+msgid "Lifespan"
+msgstr "Faid-bheatha"
+
+#: ../../../src/MenuPowers.cpp:953
+msgid "Magical Shield"
+msgstr "Sgiath dhraoidheach"
+
+#: ../../../src/MenuPowers.cpp:982
+msgid "Healing"
+msgstr "Slànachadh"
+
+#: ../../../src/MenuPowers.cpp:985
+msgid "Knockback"
+msgstr "Bualadh air ais"
+
+#: ../../../src/MenuPowers.cpp:1010
+#, c-format
+msgid "%d%% chance"
+msgstr "teans de %d%%"
+
+#: ../../../src/MenuPowers.cpp:1062
+msgid "Base Accuracy"
+msgstr "Pongalachd bhunasach"
+
+#: ../../../src/MenuPowers.cpp:1082
+msgid "Base Critical Chance"
+msgstr "Teans bunasach air bualadh èiginneach"
+
+#: ../../../src/MenuPowers.cpp:1090
+msgid "Ignores Absorbtion"
+msgstr "Leigidh seo seachad an ceapadh"
+
+#: ../../../src/MenuPowers.cpp:1095
+msgid "Ignores Avoidance"
+msgstr "Leigidh seo seachad an seachnadh"
+
+#: ../../../src/MenuPowers.cpp:1100
+#, c-format
+msgid "%d%% Chance to crit slowed targets"
+msgstr "Teans dhe %d%% gun dèan thu bualadh èiginneach air amas le maille air"
+
+#: ../../../src/MenuPowers.cpp:1105
+#, c-format
+msgid "Elemental Damage (%s)"
+msgstr "Dochann dùile (%s)"
+
+#: ../../../src/MenuPowers.cpp:1114
+#, c-format
+msgid "Requires a %s"
+msgstr "Feum air: %s"
+
+#: ../../../src/MenuPowers.cpp:1151 ../../../src/MenuPowers.cpp:1154
+#, c-format
+msgid "Requires Power: %s"
+msgstr "Feum air cumhachd: %s"
+
+#: ../../../src/MenuPowers.cpp:1163
+msgid "Click to Unlock (uses 1 Skill Point)"
+msgstr "Briog gus a neo-ghlasadh (cleachdaidh seo 1 phuing-sgil)"
+
+#: ../../../src/MenuPowers.cpp:1167 ../../../src/MenuPowers.cpp:1169
+msgid "Requires 1 Skill Point"
+msgstr "Feum air 1 phuing-sgil"
+
+#: ../../../src/MenuPowers.cpp:1355
+#, c-format
+msgid "%d unspent skill point"
+msgstr "%dphuing-sgil nach deach a chleachdadh"
+
+#: ../../../src/MenuPowers.cpp:1358
+#, c-format
+msgid "%d unspent skill points"
+msgstr "%d puing(ean)-sgil nach deach a chleachdadh"
+
+#: ../../../src/MenuPowers.cpp:1388
+msgid "Next Level:"
+msgstr "An t-ath leibheil:"
+
+#: ../../../src/MenuStash.cpp:54
+msgid "Private"
+msgstr ""
+
+#: ../../../src/MenuStash.cpp:56
+msgid "Shared"
+msgstr ""
+
+#: ../../../src/MenuStash.cpp:104
+msgid "Stash"
+msgstr ""
+
+#: ../../../src/MenuStash.cpp:259
+msgid "Can not store quest items in the stash."
+msgstr "Cha ghabh nithean cinn-thurais a chur dhan stòr."
+
+#: ../../../src/MenuStash.cpp:264
+msgid "This item can not be stored in the stash."
+msgstr "Cha ghabh an nì seo a chur dhan stòr."
+
+#: ../../../src/MenuStash.cpp:274
+msgid "Stash is full."
+msgstr "Tha an stòr làn."
+
+#: ../../../src/MenuStash.cpp:329
+#, c-format
+msgid "Can not store item in stash: %s"
+msgstr "Cha ghabh an nì a chur dhan stòr: %s"
+
+#: ../../../src/MenuTalker.cpp:447
+#, c-format
+msgid "<dialog node %d>"
+msgstr "<nòd còmhraidh %d>"
+
+#: ../../../src/MenuTalker.cpp:455
+msgid "Trade"
+msgstr "Malart"
+
+#: ../../../src/MenuVendor.cpp:58
+msgid "Buyback"
+msgstr "Na reic thu roimhe"
+
+#: ../../../src/MenuVendor.cpp:281
+msgid "Vendor"
+msgstr "Reiceadair"
+
+#: ../../../src/PowerManager.cpp:1170
+#, c-format
+msgid "+%d Shield"
+msgstr "Sgiath +%d"
+
+#: ../../../src/PowerManager.cpp:1426
+msgid "You are already transformed, untransform first."
+msgstr ""
+"Tha thu air cruth-atharrachadh mar-thà, feumaidh tu an cruth tùsail agad a "
+"ghabhail an toiseach."
+
+#: ../../../src/PowerManager.cpp:1438
+msgid "Could not untransform at this position."
+msgstr "Cha b’ urrainn dhut neo-chruth-atharrachadh air an ionad seo."
+
+#: ../../../src/QuestLog.cpp:234
+msgid "Completed Quests"
+msgstr "Cinn-thurais air a choileanadh"
+
+#: ../../../src/SaveLoad.cpp:263 ../../../src/SaveLoad.cpp:264
+msgid "Game saved."
+msgstr "Chaidh an geama a shàbhaladh."
+
+#: ../../../src/SDLInputState.cpp:633
+msgid "Backspace"
+msgstr "Backspace"
+
+#: ../../../src/SDLInputState.cpp:634
+msgid "CapsLock"
+msgstr "CapsLock"
+
+#: ../../../src/SDLInputState.cpp:637
+msgid "End"
+msgstr "End"
+
+#: ../../../src/SDLInputState.cpp:638
+msgid "Escape"
+msgstr "Escape"
+
+#: ../../../src/SDLInputState.cpp:639
+msgid "Home"
+msgstr "Home"
+
+#: ../../../src/SDLInputState.cpp:640
+msgid "Insert"
+msgstr "Insert"
+
+#: ../../../src/SDLInputState.cpp:641
+msgid "Left Alt"
+msgstr "Alt clì"
+
+#: ../../../src/SDLInputState.cpp:642
+msgid "Left Ctrl"
+msgstr "Ctrl clì"
+
+#: ../../../src/SDLInputState.cpp:644
+msgid "Left Shift"
+msgstr "Shift clì"
+
+#: ../../../src/SDLInputState.cpp:645
+msgid "NumLock"
+msgstr "NumLock"
+
+#: ../../../src/SDLInputState.cpp:646
+msgid "PageDown"
+msgstr "PageDown"
+
+#: ../../../src/SDLInputState.cpp:647
+msgid "PageUp"
+msgstr "PageUp"
+
+#: ../../../src/SDLInputState.cpp:648
+msgid "Pause"
+msgstr "Pause"
+
+#: ../../../src/SDLInputState.cpp:649
+msgid "PrintScreen"
+msgstr "PrintScreen"
+
+#: ../../../src/SDLInputState.cpp:650
+msgid "Right Alt"
+msgstr "Alt deas"
+
+#: ../../../src/SDLInputState.cpp:651
+msgid "Right Ctrl"
+msgstr "Ctrl deas"
+
+#: ../../../src/SDLInputState.cpp:652
+msgid "Return"
+msgstr "Return"
+
+#: ../../../src/SDLInputState.cpp:654
+msgid "Right Shift"
+msgstr "Shift deas"
+
+#: ../../../src/SDLInputState.cpp:655
+msgid "ScrollLock"
+msgstr "ScrollLock"
+
+#: ../../../src/SDLInputState.cpp:656
+msgid "Space"
+msgstr "Space"
+
+#: ../../../src/SDLInputState.cpp:657
+msgid "Tab"
+msgstr "Tab"
+
+#: ../../../src/SDLInputState.cpp:671
+#, c-format
+msgid "Mouse %d"
+msgstr "%d na luchaige"
+
+#: ../../../src/SDLInputState.cpp:679
+#, c-format
+msgid "Axis %d -"
+msgstr "Aiseal %d -"
+
+#: ../../../src/SDLInputState.cpp:681
+#, c-format
+msgid "Axis %d +"
+msgstr "Aiseal %d +"
+
+#: ../../../src/SDLInputState.cpp:684
+#, c-format
+msgid "Button %d"
+msgstr "Putan %d"
+
+#: ../../../src/SDLInputState.cpp:728
+msgid "Touch control D-Pad"
+msgstr "Pada-D an t-suathaidh"
+
+#: ../../../src/SDLInputState.cpp:752
+msgid "Touch control buttons"
+msgstr "Putanan an t-suathaidh"
+
+#: ../../../src/SDLInputState.cpp:767
+msgid "Tap"
+msgstr "Gnogadh"
+
+#: ../../../src/SDLInputState.cpp:819 ../../../src/SDLInputState.cpp:821
+#, c-format
+msgid "Can not bind: %s"
+msgstr "Cha ghabh a nasgadh: %s"
+
+#: ../../../src/SDLInputState.cpp:833 ../../../src/SDLInputState.cpp:837
+#: ../../../src/SDLInputState.cpp:841
+#, c-format
+msgid "'%s' is no longer bound to:"
+msgstr "Chan eil “%s” naisgte tuilleadh ri:"
+
+#: ../../../src/Stats.cpp:38
+msgid "Max HP"
+msgstr "Puingean-beatha as motha"
+
+#: ../../../src/Stats.cpp:39
+msgid "Total amount of HP."
+msgstr "Na PB iomlan."
+
+#: ../../../src/Stats.cpp:43
+msgid "HP Regen"
+msgstr "Ath-ghintinn nam puingean-beatha"
+
+#: ../../../src/Stats.cpp:44
+msgid "Ticks of HP regen per minute."
+msgstr "Ath-ghintinn nam puingean-beatha gach mionaid."
+
+#: ../../../src/Stats.cpp:48
+msgid "Max MP"
+msgstr "Puingean-gluasaid as motha"
+
+#: ../../../src/Stats.cpp:49
+msgid "Total amount of MP."
+msgstr "Na PG iomlan."
+
+#: ../../../src/Stats.cpp:53
+msgid "MP Regen"
+msgstr "Ath-ghintinn nam puingean-gluasaid"
+
+#: ../../../src/Stats.cpp:54
+msgid "Ticks of MP regen per minute."
+msgstr "Ath-ghintinn nam puingean-gluasaid gach mionaid."
+
+#: ../../../src/Stats.cpp:58
+msgid "Accuracy"
+msgstr "Pongalachd"
+
+#: ../../../src/Stats.cpp:59
+msgid ""
+"Accuracy rating. The enemy's Avoidance rating is subtracted from this value "
+"to calculate your likeliness to land a direct hit."
+msgstr ""
+"Rangachadh na pongalachd. Thèid teàrnadh an nàmhad a thoirt air falbh on "
+"luach seo airson àireamhachadh dè cho coltach ’s a bhios e gum buail thu "
+"air."
+
+#: ../../../src/Stats.cpp:63
+msgid "Avoidance"
+msgstr "Teàrnadh"
+
+#: ../../../src/Stats.cpp:64
+msgid ""
+"Avoidance rating. This value is subtracted from the enemy's Accuracy rating "
+"to calculate their likeliness to land a direct hit."
+msgstr ""
+"Rangachadh an tèarnaidh. Thèid an luach seo a thoirt air falbh o rangachd "
+"pongalachd nan nàimhdean airson àireamhachadh dè cho coltach ’s a bhios e "
+"gum buail iad ort."
+
+#: ../../../src/Stats.cpp:68
+msgid "Absorb Min"
+msgstr "Ceapadh as lugha"
+
+#: ../../../src/Stats.cpp:69 ../../../src/Stats.cpp:74
+msgid "Reduces the amount of damage taken."
+msgstr "Ìslichidh seo am meud a dhochann a dh’fhulaingeas tu."
+
+#: ../../../src/Stats.cpp:73
+msgid "Absorb Max"
+msgstr "Ceapadh as motha"
+
+#: ../../../src/Stats.cpp:78
+msgid "Critical Hit Chance"
+msgstr "Teans air bualadh èiginneach"
+
+#: ../../../src/Stats.cpp:79
+msgid "Chance for an attack to do extra damage."
+msgstr "An teans gun dèan ionnsaigh dochann a bharrachd."
+
+#: ../../../src/Stats.cpp:83
+msgid "Bonus XP"
+msgstr "Duais phuingean-eòlais"
+
+#: ../../../src/Stats.cpp:84
+msgid "Increases the XP gained per kill."
+msgstr "Bheir seo barrachd phuingean-beatha dhut leis gach marbhadh."
+
+#: ../../../src/Stats.cpp:88
+#, c-format
+msgid "Bonus %s"
+msgstr "Duais %s"
+
+#: ../../../src/Stats.cpp:89
+#, c-format
+msgid "Increases the %s found per drop."
+msgstr "Lorgaidh tu %s a bharrachd leis gach leigeil às."
+
+#: ../../../src/Stats.cpp:93
+msgid "Item Find Chance"
+msgstr "Teans air nithean a lorg"
+
+#: ../../../src/Stats.cpp:94
+msgid "Increases the chance that an enemy will drop an item."
+msgstr "Bidh barrachd teans gun leig nàmhaid nì às nuair a mharbhas tu e."
+
+#: ../../../src/Stats.cpp:98
+msgid "Stealth"
+msgstr "Tàisleachadh"
+
+#: ../../../src/Stats.cpp:99
+msgid "Increases your ability to move undetected."
+msgstr "Cuiridh seo ri do chomas nach tèid mothachadh dhut."
+
+#: ../../../src/Stats.cpp:103
+msgid "Poise"
+msgstr "Dòigh-sheasaimh"
+
+#: ../../../src/Stats.cpp:104
+msgid "Reduces your chance of stumbling when hit."
+msgstr "Cha tuit thu gu furasta nuair a thèid bualadh ort."
+
+#: ../../../src/Stats.cpp:108
+msgid "Missile Reflect Chance"
+msgstr "Teans frith-thilgeil astais"
+
+#: ../../../src/Stats.cpp:109
+msgid "Increases your chance of reflecting missiles back at enemies."
+msgstr "Cuiridh seo ris an teans gun tilg thu astas air ais dhan nàmhaid."
+
+#: ../../../src/Stats.cpp:113
+msgid "Damage Reflection"
+msgstr "Frith-thilgeil dochainn"
+
+#: ../../../src/Stats.cpp:114
+msgid "Deals a percentage of damage taken back to the attacker."
+msgstr "Nì seo cuid dhen dochann a fhuair thu air an ionnsaighear."
+
+#: ../../../src/Stats.cpp:118
+msgid "HP Steal"
+msgstr "Goid phuingean-beatha"
+
+#: ../../../src/Stats.cpp:119
+msgid "Percentage of HP stolen per hit."
+msgstr "An ceudad de phuingean-beatha a thèid a ghoid le gach buille."
+
+#: ../../../src/Stats.cpp:123
+msgid "MP Steal"
+msgstr "Goid phuingean-gluasaid"
+
+#: ../../../src/Stats.cpp:124
+msgid "Percentage of MP stolen per hit."
+msgstr "An ceudad de phuingean-gluasaid a thèid a ghoid le gach buille."
+
+#: ../../../src/Stats.cpp:128
+msgid "Base HP"
+msgstr "Puingean-beatha bunasach"
+
+#: ../../../src/Stats.cpp:133
+msgid "Base MP"
+msgstr "Puingean-gluasaid bunasach"
+
+#: ../../../src/Utils.cpp:346
+msgid "k"
+msgstr "k"
+
+#: ../../../src/Utils.cpp:580
+#, c-format
+msgid "%s second"
+msgstr "%s diog"
+
+#: ../../../src/Utils.cpp:583
+#, c-format
+msgid "%s seconds"
+msgstr "%s diog(an)"
+
+#: ../../../src/Version.cpp:139
+msgid "or newer"
+msgstr "no nas ùire"
+
+#: ../../../src/Version.cpp:142
+msgid "or older"
+msgstr "no nas sine"
