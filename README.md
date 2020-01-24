@@ -36,7 +36,7 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 
 ## Running on Switch
 
-Download the zip archive from the releases, dezip the archive.
+Download the zip archive from the releases, unzip the archive.
 Copy the "flare" folder in switch folder on micro SD card.
 
 The mods folder should be in the same directory as the flare executable when building from source.
@@ -47,7 +47,11 @@ Then enable these mods in Flare's Configuration screen.
 
     fantasycore
     empyrean_campaign
-
+    
+## Updates
+    
+    For updates the engine dowload only the NRO archive.
+    Unzip and copy in switch/flare folder on micro SD card.
 
 ## Settings
 
