@@ -50,8 +50,8 @@ Then enable these mods in Flare's Configuration screen.
     
 ## Updates
     
-    For updates the engine dowload only the NRO archive.
-    Unzip and copy in switch/flare folder on micro SD card.
+ For updates the engine dowload only the NRO file.
+ Copy in switch/flare folder on micro SD card.
 
 ## Settings
 
@@ -59,7 +59,7 @@ Settings are stored in this place:
 
     /switch/flare/config/
 
-Here you can enable fullscreen, change the game resolution, enable mouse-move, and change keybindings. The settings files are created the first time you run Flare.
+Here you can change keybindings.
 
 ## Save Files
 
@@ -67,7 +67,6 @@ Save files are stored in this place:
 
     /switch/flare/saves/
 
-If permissions are correct, the game is automatically saved when you exit.
 
 ### Building for Switch
 
