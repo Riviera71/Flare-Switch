@@ -41,17 +41,12 @@ Copy the "flare" folder in switch folder on micro SD card.
 
 The mods folder should be in the same directory as the flare executable when building from source.
 
-Flare Game is installed as a set of mods for Flare Engine. Place the contents of the "mods" folder inside Flare Engine's mods folder.
-
-Then enable these mods in Flare's Configuration screen.
-
-    fantasycore
-    empyrean_campaign
+That's all, enjoy!
     
 ## Updates
     
- For updates the engine dowload only the NRO file.
- Copy in switch/flare folder on micro SD card.
+ For updates the engine, download only the NRO file.
+ Copy it in switch/flare folder on micro SD card and erase the older.
 
 ## Settings
 
@@ -76,8 +71,6 @@ Clone the repos:
 	
 
 Move to the flare-engine repo and build:
-For instructions more in detail see the INSTALL file in the
-flare-engine repo.
 
 	cd flare-engine
 	make -f Makefile.NX
