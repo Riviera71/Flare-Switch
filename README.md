@@ -33,22 +33,11 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 * Forums    http://opengameart.org/forums/flare
 * Email     clintbellanger@gmail.com
 
-## The Simplest Setup
-
-If you are building and running Flare Game from source, this is the simplest way to get started on all operating systems. Here you build and play Flare in a local folder instead of installing it to a standard OS folder (e.g. /usr/local or Program Files).
-
-* Clone the flare-engine repo and build the executable.
-* Clone the flare-game repo into your user directory.
-* Copy the flare-engine "default" mod into the flare-game mods folder.
-* Put the flare executable inside the flare-game folder
-* The executable and the "mods" folder should be in the same directory
-* Run Flare
 
 ## Running on Switch
 
-See the Flare-Engine repo for instructions on how to install Flare:
-
-https://github.com/Riviera71/flare-engine
+Download the zip archive from the releases, dezip the archive.
+Copy the "flare" folder in switch folder on micro SD card.
 
 The mods folder should be in the same directory as the flare executable when building from source.
 
@@ -72,7 +61,7 @@ Here you can enable fullscreen, change the game resolution, enable mouse-move, a
 
 Save files are stored in this place:
 
-    /switch/flare/saves
+    /switch/flare/saves/
 
 If permissions are correct, the game is automatically saved when you exit.
 
