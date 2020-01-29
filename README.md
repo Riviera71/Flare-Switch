@@ -37,12 +37,31 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 ## Running on Switch
 
 Download the zip archive from the releases, unzip the archive.
-Copy the "flare" folder in switch folder on micro SD card.
+Copy the "flare" folder in "switch" folder on Switch micro SD card.
 
 The mods folder should be in the same directory as the flare executable when building from source.
 
 That's all, enjoy!
-    
+
+## Default button mapping
+
+| Button  | Description
+|---------------------------------------------
+| `A`     | Accept
+| `B`     | Cancel
+| `X`     | Main1
+| `Y`     | Main2
+| `LJoy`  | Moving character, menus navigation
+| `Left`  | Character menu
+| `Right` | Inventory menu
+| `Up`    | Log menu
+| `Down`  | Powers menu
+| `L`     | ActionBar Left
+| `R`     | ActionBar Right
+| `ZL`    | ActionBar Accept
+| `ZR`    | ActionBar Use
+
+
 ## Updates
     
  For updates the engine, download only the NRO file.
@@ -76,7 +95,7 @@ Move to the flare-engine repo and build:
 	make -f Makefile.NX
 
 
-## Command-line Flags
+### Command-line Flags
 
 | Flag              | Description
 |-------------------|----------------
