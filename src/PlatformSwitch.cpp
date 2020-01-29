@@ -37,14 +37,12 @@ FLARE.  If not, see http://www.gnu.org/licenses/
 
 Platform platform;
 
-///CONFIG_MENU_TYPE_DESKTOP_NO_VIDEO,CONFIG_MENU_TYPE_DESKTOP,CONFIG_MENU_TYPE_BASE;
-
 Platform::Platform()
 	: has_exit_button(true)
 	, is_mobile_device(false)
 	, force_hardware_cursor(true)
 	, has_lock_file(false)
-	, config_menu_type(CONFIG_MENU_TYPE_DESKTOP)
+	, config_menu_type(CONFIG_MENU_TYPE_DESKTOP) ///CONFIG_MENU_TYPE_DESKTOP_NO_VIDEO,CONFIG_MENU_TYPE_DESKTOP,CONFIG_MENU_TYPE_BASE;
 	, default_renderer("sdl_hardware")
 	, config_video(Platform::Video::COUNT, true)
 	, config_audio(Platform::Audio::COUNT, true)
@@ -78,7 +76,7 @@ Platform::~Platform() {
 
 void Platform::setPaths() {
 
-	settings->path_user = "/switch/flare-v1.11/";
+	settings->path_user = "/switch/flare/";
 	Filesystem::createDir(settings->path_user);
 	settings->path_conf = settings->path_user + "config/";
 	Filesystem::createDir(settings->path_conf);
