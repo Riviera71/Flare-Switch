@@ -36,8 +36,8 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 
 ## Running on Switch
 
-*Download the zip archive from the releases, unzip the archive.
-*Copy the "flare" folder in "switch" folder on Switch micro SD card.
+* Download the zip archive from the releases, unzip the archive.
+* Copy the "flare" folder in "switch" folder on Switch micro SD card.
 
 The mods folder should be in the same directory as the flare.nro file.
 
@@ -66,13 +66,14 @@ That's all, enjoy!
 | `ZR`    | ActionBar Use
 
 You can remap the buttons as you want in "keybindings" tab, but in first the Accept action and don't erase it.
+
 If you erase it by mistake , escape the options menu.
+
 For saving any options modifications validate by OK menu button.
 
 ## Updates
-    
- For updates the engine, download only "flare.nro" file.
- Copy it in switch/flare folder on micro SD card and erase the older.
+
+ For updates the engine download only "flare.nro" file, copy it in "switch/flare" folder on micro SD card and erase the older.
 
 ## Settings
 
