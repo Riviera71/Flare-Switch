@@ -39,16 +39,18 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 Download the zip archive from the releases, unzip the archive.
 Copy the "flare" folder in "switch" folder on Switch micro SD card.
 
-The mods folder should be in the same directory as the flare executable when building from source.
+The mods folder should be in the same directory as the flare.nro file.
+The Empyrean campaign is choosen by default, but you can change it in "Mods" tab.
+Disable "empyrean_camp" and enable "alpha_demo" the first Flare game campaign.
 
 That's all, enjoy!
 
 ## Default button mapping
 
-| Button  | Description
+| Button  | Action
 |---------|-----------------------------------
 | `A`     | Accept
-| `B`     | Cancel
+| `B`     | Cancel, Escape
 | `X`     | Main1
 | `Y`     | Main2
 | `LJoy`  | Moving character, menus navigation
@@ -61,10 +63,13 @@ That's all, enjoy!
 | `ZL`    | ActionBar Accept
 | `ZR`    | ActionBar Use
 
+You can remap the buttons as you want in keybindings tab, but in first the Accept action and don't erase it.
+If you erase it by mistake , escape the options menu.
+For saving any options modifications validate by OK menu button.
 
 ## Updates
     
- For updates the engine, download only the NRO file.
+ For updates the engine, download only "flare.nro" file.
  Copy it in switch/flare folder on micro SD card and erase the older.
 
 ## Settings
