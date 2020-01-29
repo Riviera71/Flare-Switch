@@ -46,7 +46,7 @@ That's all, enjoy!
 ## Default button mapping
 
 | Button  | Description
-|---------------------------------------------
+|---------|-----------------------------------
 | `A`     | Accept
 | `B`     | Cancel
 | `X`     | Main1
