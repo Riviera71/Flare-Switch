@@ -36,11 +36,13 @@ The GNU Unifont font is released under GPL v2, with the exception that embedding
 
 ## Running on Switch
 
-Download the zip archive from the releases, unzip the archive.
-Copy the "flare" folder in "switch" folder on Switch micro SD card.
+*Download the zip archive from the releases, unzip the archive.
+*Copy the "flare" folder in "switch" folder on Switch micro SD card.
 
 The mods folder should be in the same directory as the flare.nro file.
+
 The Empyrean campaign is choosen by default, but you can change it in "Mods" tab.
+
 Disable "empyrean_camp" and enable "alpha_demo" the first Flare game campaign.
 
 That's all, enjoy!
@@ -63,7 +65,7 @@ That's all, enjoy!
 | `ZL`    | ActionBar Accept
 | `ZR`    | ActionBar Use
 
-You can remap the buttons as you want in keybindings tab, but in first the Accept action and don't erase it.
+You can remap the buttons as you want in "keybindings" tab, but in first the Accept action and don't erase it.
 If you erase it by mistake , escape the options menu.
 For saving any options modifications validate by OK menu button.
 
