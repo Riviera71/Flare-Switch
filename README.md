@@ -94,7 +94,7 @@ Save files are stored in this place:
 
 Clone the repos:
 
-	git clone https://github.com/Riviera71/flare-engine
+	git clone https://github.com/Riviera71/flare-Switch-port
 	
 
 Move to the flare-engine repo and build:
