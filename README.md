@@ -99,7 +99,7 @@ Clone the repos:
 
 Move to the flare-engine repo and build:
 
-	cd flare-engine
+	cd Flare-Switch
 	make -f Makefile.NX
 
 
